@@ -2,7 +2,7 @@
 
 import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 
-type ButtonVariant = "primary" | "secondary";
+type ButtonVariant = "primary" | "secondary" | "secondary-cream" | "outline-cream";
 
 interface ButtonBaseProps {
   variant?: ButtonVariant;
@@ -29,6 +29,18 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-transparent text-navy border-2 border-navy",
     "hover:bg-navy hover:text-cream",
     "active:bg-navy-soft active:text-cream",
+  ].join(" "),
+  "secondary-cream": [
+    "bg-transparent text-cream border-2 border-cream/70",
+    "hover:bg-cream hover:text-navy hover:border-cream",
+    "active:bg-cream-dark active:text-navy",
+    "shadow-[0_1px_2px_rgba(0,0,0,0.1)]",
+  ].join(" "),
+  "outline-cream": [
+    "bg-transparent text-cream border-2 border-cream/70",
+    "hover:bg-cream hover:text-navy hover:border-cream",
+    "active:bg-cream-dark active:text-navy",
+    "shadow-[0_1px_2px_rgba(0,0,0,0.1)]",
   ].join(" "),
 };
 
