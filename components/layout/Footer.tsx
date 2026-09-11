@@ -66,6 +66,7 @@ export function Footer() {
             © {new Date().getFullYear()} MindGame Africa. All rights reserved.
           </p>
           <div className="flex gap-6">
+            {/* TODO: build /privacy and /terms pages before real launch */}
             <Link href="#" className="text-[0.8125rem] text-cream/40 hover:text-cream/70 transition-colors">
               Privacy
             </Link>

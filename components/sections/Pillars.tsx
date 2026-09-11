@@ -14,6 +14,11 @@ interface Pillar {
   href: string;
   isFeatured?: boolean;
   tags?: string[];
+  secondaryLink?: {
+    text: string;
+    linkText: string;
+    href: string;
+  };
 }
 
 const pillars: Pillar[] = [
@@ -24,7 +29,7 @@ const pillars: Pillar[] = [
       "Evidence-informed assessment and intervention for athletes, coaches, teams and other high-pressure performers, with particular strength in performance psychology, mental performance and behavioural performance.",
     accent: "gold",
     theme: "navy",
-    href: "/performance-services",
+    href: "/performance-services/applied-performance-practice",
     isFeatured: true,
     tags: ["Performance Psychology", "Mental Performance", "Behavioural Performance"],
   },
@@ -35,7 +40,7 @@ const pillars: Pillar[] = [
       "A multidisciplinary approach to understanding performance through the interaction of psychological, behavioural, physiological, biomechanical, technical, analytical and contextual factors.",
     accent: "green",
     theme: "cream",
-    href: "/research",
+    href: "/research/performance-science",
   },
   {
     number: "03",
@@ -59,10 +64,15 @@ const pillars: Pillar[] = [
     number: "05",
     title: "Practitioner Development",
     description:
-      "Supervised learning, mentorship, case discussion, observation, practicum, internships and applied-practice pathways that help emerging professionals move from qualification toward competence.",
+      "MindGame Africa is being built to help strengthen the route from academic learning to competent professional practice. This includes future opportunities for internships, supervised experience, practitioner education, mentoring, applied projects and collaboration with universities and experienced specialists.",
     accent: "gold",
     theme: "cream",
     href: "/education",
+    secondaryLink: {
+      text: "Interested in future opportunities?",
+      linkText: "Get in touch.",
+      href: "/partner-with-us",
+    },
   },
 ];
 
@@ -78,7 +88,7 @@ export function Pillars() {
             className="mb-4"
           />
           <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-            Five ways we build performance capability.
+            How MindGame Africa Works Across Performance.
           </h2>
         </div>
 
@@ -152,6 +162,18 @@ export function Pillars() {
                   >
                     {pillar.description}
                   </p>
+
+                  {pillar.secondaryLink && (
+                    <p className="mt-3 text-xs sm:text-[0.8125rem] text-navy/60">
+                      {pillar.secondaryLink.text}{" "}
+                      <Link
+                        href={pillar.secondaryLink.href}
+                        className="text-navy font-semibold underline underline-offset-2 hover:text-gold transition-colors"
+                      >
+                        {pillar.secondaryLink.linkText}
+                      </Link>
+                    </p>
+                  )}
                 </div>
 
                 {/* ── Card Lower Section: Tags / Action Link ── */}
