@@ -88,7 +88,7 @@ export function Pillars() {
             className="mb-4"
           />
           <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-            How MindGame Africa Works Across Performance.
+            How MindGame Africa Works Across Performance
           </h2>
         </div>
 

@@ -34,7 +34,7 @@ export function Footer() {
               MindGame Africa
             </Link>
             <p className="mt-4 text-[0.875rem] leading-relaxed text-cream/60 max-w-xs">
-              Developing the human and intellectual infrastructure of performance in Africa.
+              Performance science, research, education and professional practice for stronger performance capability in Africa.
             </p>
           </div>
 

@@ -70,7 +70,7 @@ export function WhoWeWorkWith() {
             className="mb-4"
           />
           <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.14]">
-            Who MindGame Africa Is Built to Work With.
+            Who MindGame Africa Is Built to Work With
           </h2>
           <p className="mt-5 text-navy/70 text-base md:text-lg leading-relaxed max-w-[620px]">
             We work across individual, team and performance environment levels,

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 
 const approaches = [
   "We begin with the performance question, not with a fashionable technique.",
@@ -79,6 +80,19 @@ export default function AboutPage() {
                 psychology, mental performance and behavioural performance,
                 while our broader direction is deliberately multidisciplinary.
               </p>
+
+              <div className="mt-8 pt-8 border-t border-navy/10">
+                <h3 className="font-[family-name:var(--font-fraunces)] text-2xl font-bold text-navy mb-3">
+                  How We Think About Performance
+                </h3>
+                <p className="text-navy/80 text-base md:text-lg leading-relaxed">
+                  Performance is not one thing. The same visible problem can have different
+                  causes, and the discipline required should be determined by the problem
+                  rather than by the service someone wants to sell. We begin with the
+                  performance question, examine context, and integrate appropriate
+                  evidence rather than imposing isolated commercial techniques.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -190,6 +204,65 @@ export default function AboutPage() {
               active when the people, standards and infrastructure required to
               deliver it properly are in place.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── 6. Leadership ── */}
+      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
+        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="max-w-[760px] mb-12 md:mb-16"
+          >
+            <SectionEyebrow
+              variant="gold-dark"
+              label="LEADERSHIP"
+              className="mb-4"
+            />
+            <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+              Institutional Leadership
+            </h2>
+            <p className="mt-5 text-navy/75 text-base md:text-lg leading-relaxed max-w-[660px]">
+              MindGame Africa is led by its Founder, Dr. Joshua A. Oparachukwu,
+              alongside an expanding network of qualified practitioners,
+              researchers, faculty and specialist collaborators.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            className="rounded-2xl bg-white p-8 md:p-12 text-navy border border-navy/[0.08] shadow-[0_4px_20px_rgba(16,35,63,0.04)] max-w-[860px]"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                Founder, MindGame Africa
+              </span>
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-medium text-gold">
+                Performance Psychologist | Performance Strategist
+              </span>
+            </div>
+            <h3 className="font-[family-name:var(--font-fraunces)] text-2xl sm:text-3xl font-bold text-navy tracking-tight mb-4">
+              Dr. Joshua A. Oparachukwu
+            </h3>
+            <p className="text-navy/80 text-base md:text-[1.0625rem] leading-[1.7] mb-6">
+              Dr. Joshua A. Oparachukwu provides strategic, intellectual and
+              professional direction for MindGame Africa. His work sits at the
+              intersection of human performance, applied psychology, research and
+              professional education, with particular focus on the psychological
+              and behavioural factors that shape performance under pressure.
+            </p>
+            <div className="pt-6 border-t border-navy/[0.08] flex flex-wrap items-center gap-4">
+              <Button variant="primary" href="/people">
+                View Full Leadership Profile & Network
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

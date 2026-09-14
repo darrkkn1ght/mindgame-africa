@@ -21,21 +21,46 @@ export function PeoplePreview() {
             className="mb-4"
           />
 
-          <Card variant="navy" className="mt-6 max-w-[860px]">
-            <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-balance leading-[1.12]">
-              Built through expertise, not titles.
-            </h2>
-            <p className="mt-5 text-cream/80 text-base md:text-lg leading-relaxed max-w-[620px]">
-              MindGame Africa will grow through a network of practitioners,
-              researchers, faculty and specialist collaborators whose roles are
-              defined by the work they are qualified to contribute.
-            </p>
-            <div className="mt-8">
-              <Button variant="primary" href="/people">
-                Meet the People
-              </Button>
-            </div>
-          </Card>
+          <div className="mt-6 max-w-[860px] space-y-6">
+            <Card variant="navy">
+              <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-balance leading-[1.12]">
+                Built through expertise, not titles.
+              </h2>
+              <p className="mt-5 text-cream/80 text-base md:text-lg leading-relaxed max-w-[620px]">
+                MindGame Africa will grow through a network of practitioners,
+                researchers, faculty and specialist collaborators whose roles are
+                defined by the work they are qualified to contribute.
+              </p>
+
+              {/* Founder & Leadership Card */}
+              <div className="mt-8 pt-8 border-t border-cream/15">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-gold">
+                    Founder, MindGame Africa
+                  </span>
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-medium text-cream/60">
+                    Performance Psychologist | Performance Strategist
+                  </span>
+                </div>
+                <h3 className="font-[family-name:var(--font-fraunces)] text-2xl sm:text-3xl font-bold text-cream tracking-tight mb-3">
+                  Dr. Joshua A. Oparachukwu
+                </h3>
+                <p className="text-cream/80 text-[0.9375rem] md:text-base leading-relaxed max-w-[660px]">
+                  Dr. Joshua A. Oparachukwu leads MindGame Africa&apos;s work across applied
+                  performance practice, research, professional education and
+                  practitioner development, with particular interest in the
+                  psychological and behavioural factors that shape performance under
+                  pressure.
+                </p>
+              </div>
+
+              <div className="mt-8">
+                <Button variant="primary" href="/people">
+                  Meet the People & Leadership
+                </Button>
+              </div>
+            </Card>
+          </div>
         </motion.div>
       </div>
     </section>

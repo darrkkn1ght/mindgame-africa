@@ -5,10 +5,10 @@ import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Card } from "@/components/ui/Card";
 import { ContactForm } from "@/components/sections/ContactForm";
 
-// ── Contact Details Placeholders (Swap in one place when confirmed) ──
-const CONTACT_EMAIL = "[EMAIL TO BE ADDED]";
-const CONTACT_PHONE = "[PHONE TO BE ADDED]";
-const CONTACT_LOCATION = "[LOCATION TO BE ADDED]";
+// ── Contact Details (using confirmed institutional domain mindgameafrica.com) ──
+const CONTACT_EMAIL = "info@mindgameafrica.com";
+const CONTACT_PHONE = ""; // Phone kept empty until officially confirmed to comply with brief guardrails
+const CONTACT_LOCATION = "Pan-African Network & Digital Operations";
 
 export default function ContactPage() {
   // Only display phone if an actual number is provided, not a placeholder
