@@ -3,46 +3,64 @@
 import { useState, FormEvent } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { opportunitiesContent } from "@/lib/content";
+import {
+  OpportunityInterestSchema,
+  OpportunityInterestData,
+} from "@/lib/validations";
 
-interface FormData {
-  name: string;
-  email: string;
-  interestNote: string;
-}
-
-const initialFormData: FormData = {
+const initialFormData: OpportunityInterestData = {
   name: "",
   email: "",
-  interestNote: "",
+  role: "",
+  areaOfInterest: "",
+  message: "",
+  consent: false,
 };
 
+const areaOptions = [
+  "Practitioner Development & Mentorship",
+  "Supervised Practicum & Experience",
+  "Internships & Placements",
+  "Applied Performance Projects",
+  "Research Attachments",
+  "Other",
+];
+
 export function OpportunityInterestForm() {
-  const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+  const [formData, setFormData] =
+    useState<OpportunityInterestData>(initialFormData);
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof OpportunityInterestData, string>>
+  >({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const validate = (): boolean => {
-    const newErrors: Partial<Record<keyof FormData, string>> = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Please enter your name.";
+    const result = OpportunityInterestSchema.safeParse(formData);
+    if (!result.success) {
+      const newErrors: Partial<
+        Record<keyof OpportunityInterestData, string>
+      > = {};
+      for (const issue of result.error.issues) {
+        const field = issue.path[0] as keyof OpportunityInterestData;
+        if (field && !newErrors[field]) {
+          newErrors[field] = issue.message;
+        }
+      }
+      setErrors(newErrors);
+      return false;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim()) {
-      newErrors.email = "Please enter your email address.";
-    } else if (!emailRegex.test(formData.email.trim())) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors({});
+    return true;
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     if (!validate()) {
       return;
@@ -68,24 +86,53 @@ export function OpportunityInterestForm() {
       if (response.ok) {
         setIsSuccess(true);
       } else {
-        setSubmitError(
-          "Something went wrong — please try again or contact us directly."
-        );
+        let errMessage =
+          "There was an issue submitting your form. Please try again or contact inquiries@mindgameafrica.com.";
+        try {
+          const data = await response.json();
+          if (
+            data?.errors &&
+            Array.isArray(data.errors) &&
+            data.errors.length > 0
+          ) {
+            errMessage =
+              data.errors
+                .map((err: { message?: string }) => err.message || "")
+                .filter(Boolean)
+                .join(", ") || errMessage;
+          } else if (data?.error) {
+            errMessage =
+              typeof data.error === "string" ? data.error : errMessage;
+          }
+        } catch {
+          // Use default fallback
+        }
+        setSubmitError(errMessage);
       }
     } catch {
       setSubmitError(
-        "Something went wrong — please try again or contact us directly."
+        "There was an issue submitting your form. Please try again or contact inquiries@mindgameafrica.com."
       );
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleChange = (field: keyof FormData, value: string) => {
+  const handleChange = (
+    field: keyof OpportunityInterestData,
+    value: string | boolean
+  ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }));
     }
+  };
+
+  const handleReset = () => {
+    setFormData(initialFormData);
+    setErrors({});
+    setIsSuccess(false);
+    setSubmitError(null);
   };
 
   if (isSuccess) {
@@ -97,24 +144,34 @@ export function OpportunityInterestForm() {
           </div>
           <div>
             <h3 className="font-[family-name:var(--font-fraunces)] text-2xl sm:text-3xl font-bold text-navy tracking-tight">
-              Thanks — we&apos;ll be in touch when opportunities open.
+              Thank you. We&apos;ll contact you when relevant opportunities arise.
             </h3>
             <p className="mt-3 text-navy/75 text-base md:text-lg leading-relaxed">
-              Your details have been recorded. We will contact you when relevant
-              practitioner development, mentoring, or project opportunities
-              become available.
+              Your details have been recorded. When structured opportunities
+              including internships, supervised practicum, or practitioner
+              development pathways open, we will contact you directly.
             </p>
+            <div className="mt-8">
+              <button
+                type="button"
+                onClick={handleReset}
+                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
+              >
+                Register another interest
+              </button>
+            </div>
           </div>
         </div>
       </div>
     );
   }
 
+  const { labels, description } = opportunitiesContent.interestForm;
+
   return (
     <div className="rounded-2xl bg-white p-8 md:p-12 text-navy border border-navy/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] max-w-[720px]">
       <p className="text-navy/80 text-base md:text-lg leading-relaxed mb-8 pb-6 border-b border-navy/10">
-        Interested in future opportunities with MindGame Africa? Leave your
-        details and we&apos;ll reach out when something opens up.
+        {description}
       </p>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -124,7 +181,7 @@ export function OpportunityInterestForm() {
             htmlFor="opp-name"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Your name{" "}
+            {labels.fullName}{" "}
             <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
               *
             </span>
@@ -152,7 +209,7 @@ export function OpportunityInterestForm() {
             htmlFor="opp-email"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Email address{" "}
+            {labels.email}{" "}
             <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
               *
             </span>
@@ -174,25 +231,95 @@ export function OpportunityInterestForm() {
           )}
         </div>
 
-        {/* Area of Interest (optional) */}
+        {/* Role / Background (optional) */}
         <div>
           <label
-            htmlFor="opp-note"
+            htmlFor="opp-role"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Area of interest{" "}
+            {labels.currentBackground}{" "}
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+              (optional)
+            </span>
+          </label>
+          <input
+            id="opp-role"
+            type="text"
+            value={formData.role}
+            onChange={(e) => handleChange("role", e.target.value)}
+            placeholder="e.g. Postgraduate student, coach, practitioner"
+            className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+          />
+        </div>
+
+        {/* Area of Interest (optional select) */}
+        <div>
+          <label
+            htmlFor="opp-area"
+            className="block text-sm font-semibold text-navy mb-2"
+          >
+            {labels.areaOfInterest}{" "}
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+              (optional)
+            </span>
+          </label>
+          <select
+            id="opp-area"
+            value={formData.areaOfInterest}
+            onChange={(e) => handleChange("areaOfInterest", e.target.value)}
+            className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+          >
+            <option value="">Select an area of interest (optional)...</option>
+            {areaOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Message (optional) */}
+        <div>
+          <label
+            htmlFor="opp-message"
+            className="block text-sm font-semibold text-navy mb-2"
+          >
+            Message or specific focus{" "}
             <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
               (optional)
             </span>
           </label>
           <textarea
-            id="opp-note"
+            id="opp-message"
             rows={3}
-            value={formData.interestNote}
-            onChange={(e) => handleChange("interestNote", e.target.value)}
-            placeholder="e.g. Internships, supervised practice, practitioner education, applied research, performance psychology..."
+            value={formData.message}
+            onChange={(e) => handleChange("message", e.target.value)}
+            placeholder="Share any specific pathways or learning expectations you would like us to note..."
             className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] leading-relaxed transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
           />
+        </div>
+
+        {/* Consent Checkbox */}
+        <div className="pt-2">
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={formData.consent}
+              onChange={(e) => handleChange("consent", e.target.checked)}
+              className="mt-1 h-4 w-4 rounded border-navy/30 text-gold accent-gold focus:ring-gold"
+            />
+            <span className="text-sm text-navy/80 leading-snug">
+              {labels.consent}{" "}
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+                *
+              </span>
+            </span>
+          </label>
+          {errors.consent && (
+            <p className="mt-1.5 text-xs text-orange font-medium">
+              {errors.consent}
+            </p>
+          )}
         </div>
 
         {/* Submit Error */}
@@ -210,7 +337,7 @@ export function OpportunityInterestForm() {
             disabled={isSubmitting}
             className="w-full sm:w-auto"
           >
-            {isSubmitting ? "Submitting..." : "Submit Details"}
+            {isSubmitting ? labels.submittingButton : labels.submitButton}
           </Button>
         </div>
       </form>

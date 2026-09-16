@@ -3,19 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Performance Services", href: "/performance-services" },
-  { label: "Research", href: "/research" },
-  { label: "Education", href: "/education" },
-  { label: "Insights", href: "/insights" },
-  { label: "People", href: "/people" },
-  { label: "Contact", href: "/contact" },
-];
+import { globalContent } from "@/lib/content";
 
 export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navLinks = globalContent.nav.primary.filter(
+    (l) => l.href !== globalContent.nav.cta.href
+  );
 
   return (
     <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-navy/[0.06]">
@@ -55,10 +49,10 @@ export function Nav() {
 
         {/* Desktop CTA */}
         <Link
-          href="/partner-with-us"
+          href={globalContent.nav.cta.href}
           className="hidden lg:inline-flex items-center px-5 py-2.5 bg-navy text-cream text-[0.8125rem] font-semibold rounded-md hover:bg-navy-soft transition-colors duration-200"
         >
-          Partner With Us
+          {globalContent.nav.cta.label}
         </Link>
 
         {/* Mobile menu toggle */}
@@ -88,11 +82,11 @@ export function Nav() {
             ))}
           </ul>
           <Link
-            href="/partner-with-us"
+            href={globalContent.nav.cta.href}
             onClick={() => setMobileOpen(false)}
             className="mt-4 inline-flex items-center px-5 py-3 bg-navy text-cream text-[0.875rem] font-semibold rounded-md w-full justify-center"
           >
-            Partner With Us
+            {globalContent.nav.cta.label}
           </Link>
         </div>
       )}

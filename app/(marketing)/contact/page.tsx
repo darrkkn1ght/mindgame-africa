@@ -1,201 +1,138 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { Card } from "@/components/ui/Card";
 import { ContactForm } from "@/components/sections/ContactForm";
+import { FullInquiryForm } from "@/components/sections/FullInquiryForm";
+import { contactContent } from "@/lib/content";
 
-// ── Contact Details (using confirmed institutional domain mindgameafrica.com) ──
-const CONTACT_EMAIL = "info@mindgameafrica.com";
-const CONTACT_PHONE = ""; // Phone kept empty until officially confirmed to comply with brief guardrails
-const CONTACT_LOCATION = "Pan-African Network & Digital Operations";
+// ── Contact Details ──
+// No email, telephone, or location has been supplied.
+// Per Amendment A1, no location is to be published at all.
+const CONTACT_EMAIL = "";
+const CONTACT_PHONE = "";
 
 export default function ContactPage() {
-  // Only display phone if an actual number is provided, not a placeholder
-  const showPhone =
-    Boolean(CONTACT_PHONE) &&
-    !CONTACT_PHONE.includes("PLACEHOLDER") &&
-    !CONTACT_PHONE.includes("TO BE ADDED") &&
-    !CONTACT_PHONE.startsWith("[");
+  const [activeTab, setActiveTab] = useState<"general" | "detailed">("general");
+
+  const showEmail = Boolean(CONTACT_EMAIL);
+  const showPhone = Boolean(CONTACT_PHONE);
+  const hasDirectContact = showEmail || showPhone;
 
   return (
     <>
-      {/* ── 1. Hero ── */}
+      {/* ── 1. Hero (§14) ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px]"
+            className="max-w-[780px]"
           >
             <SectionEyebrow
               variant="gold"
-              label="CONTACT"
+              label={contactContent.hero.eyebrow}
               className="mb-6 md:mb-7"
             />
             <h1 className="font-[family-name:var(--font-fraunces)] text-cream tracking-tight text-balance leading-[1.08]">
-              Contact MindGame Africa
+              {contactContent.hero.heading}
             </h1>
             <p className="mt-6 md:mt-7 text-cream/85 max-w-[620px] text-[1.0625rem] md:text-[1.125rem] leading-[1.68]">
-              For performance inquiries, research conversations, education,
-              professional collaboration or general questions, use the contact
-              details below or send us a message through the form.
+              {contactContent.hero.supportingSentence}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── 2. Contact Details Block ── */}
-      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] mb-12 md:mb-16"
-          >
-            <SectionEyebrow
-              variant="gold-dark"
-              label="DIRECT CONTACT"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Contact Details
-            </h2>
-            <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed max-w-[620px]">
-              Direct communication channels for reaching our institutional
-              team.
-            </p>
-          </motion.div>
-
-          <div
-            className={`grid grid-cols-1 ${
-              showPhone ? "md:grid-cols-3" : "md:grid-cols-2"
-            } gap-6 lg:gap-8 max-w-[960px]`}
-          >
-            {/* Email Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <Card
-                variant="default"
-                className="h-full flex flex-col justify-between border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.03)]"
-              >
-                <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green block mb-3">
-                    Email
-                  </span>
-                  <p className="font-[family-name:var(--font-jetbrains-mono)] text-lg md:text-xl font-bold text-navy tracking-tight mb-3 break-all">
-                    {CONTACT_EMAIL}
-                  </p>
-                  <p className="text-navy/70 text-[0.9375rem] leading-relaxed">
-                    For performance inquiries, research conversations,
-                    education, and institutional partnerships.
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Location Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.5,
-                delay: 0.08,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-            >
-              <Card
-                variant="default"
-                className="h-full flex flex-col justify-between border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.03)]"
-              >
-                <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green block mb-3">
-                    Location
-                  </span>
-                  <p className="font-[family-name:var(--font-jetbrains-mono)] text-lg md:text-xl font-bold text-navy tracking-tight mb-3">
-                    {CONTACT_LOCATION}
-                  </p>
-                  <p className="text-navy/70 text-[0.9375rem] leading-relaxed">
-                    Operating across African performance environments and
-                    collaborative institutional networks.
-                  </p>
-                </div>
-              </Card>
-            </motion.div>
-
-            {/* Phone Card (only shown when an actual phone is provided) */}
-            {showPhone && (
-              <motion.div
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.16,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-              >
-                <Card
-                  variant="default"
-                  className="h-full flex flex-col justify-between border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.03)]"
-                >
+      {/* ── 2. Direct Channels Block ──
+          Per §14 and Amendment A1: renders ONLY when a real value exists.
+          Zero placeholders, zero '#', zero greyed-out dummy rows.
+      ── */}
+      {hasDirectContact && (
+        <section className="relative bg-cream border-t border-navy/[0.06] py-16">
+          <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+            <div className="max-w-[760px]">
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                Direct Channels
+              </span>
+              <div className="mt-4 flex flex-wrap gap-8">
+                {showEmail && (
                   <div>
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green block mb-3">
-                      Phone
+                    <span className="text-xs text-navy/50 font-[family-name:var(--font-jetbrains-mono)] uppercase">
+                      Email
                     </span>
-                    <p className="font-[family-name:var(--font-jetbrains-mono)] text-lg md:text-xl font-bold text-navy tracking-tight mb-3">
-                      {CONTACT_PHONE}
-                    </p>
-                    <p className="text-navy/70 text-[0.9375rem] leading-relaxed">
-                      Direct telephone communication line.
+                    <p className="text-navy font-bold font-[family-name:var(--font-jetbrains-mono)] text-lg">
+                      {CONTACT_EMAIL}
                     </p>
                   </div>
-                </Card>
-              </motion.div>
-            )}
+                )}
+                {showPhone && (
+                  <div>
+                    <span className="text-xs text-navy/50 font-[family-name:var(--font-jetbrains-mono)] uppercase">
+                      Phone
+                    </span>
+                    <p className="text-navy font-bold font-[family-name:var(--font-jetbrains-mono)] text-lg">
+                      {CONTACT_PHONE}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* ── 3. Contact Form ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
+      {/* ── 3. Inquiry Form Section (General Message vs §14.1 Full Flow) ── */}
+      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] mb-12 md:mb-16"
-          >
-            <SectionEyebrow
-              variant="gold"
-              label="SEND A MESSAGE"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Contact Form
-            </h2>
-          </motion.div>
+          {/* Form Selection Tabs */}
+          <div className="max-w-[840px] mx-auto mb-10">
+            <div className="flex border-b border-navy/[0.12] gap-4">
+              <button
+                type="button"
+                onClick={() => setActiveTab("general")}
+                className={`pb-3.5 px-2 text-sm md:text-base font-semibold transition-all relative ${
+                  activeTab === "general"
+                    ? "text-navy font-[family-name:var(--font-fraunces)]"
+                    : "text-navy/50 hover:text-navy/80"
+                }`}
+              >
+                <span>General Message</span>
+                {activeTab === "general" && (
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold" />
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("detailed")}
+                className={`pb-3.5 px-2 text-sm md:text-base font-semibold transition-all relative ${
+                  activeTab === "detailed"
+                    ? "text-navy font-[family-name:var(--font-fraunces)]"
+                    : "text-navy/50 hover:text-navy/80"
+                }`}
+              >
+                <span>Performance & Collaboration Inquiry (§14.1)</span>
+                {activeTab === "detailed" && (
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold" />
+                )}
+              </button>
+            </div>
+          </div>
 
+          {/* Form Render */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{
-              duration: 0.5,
-              delay: 0.1,
-              ease: [0.25, 0.1, 0.25, 1],
-            }}
+            key={activeTab}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            <ContactForm />
+            {activeTab === "general" ? (
+              <ContactForm />
+            ) : (
+              <FullInquiryForm />
+            )}
           </motion.div>
         </div>
       </section>

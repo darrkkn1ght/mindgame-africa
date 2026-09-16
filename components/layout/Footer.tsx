@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { globalContent } from "@/lib/content";
 
 const footerLinks = {
   "What We Do": [
@@ -31,10 +32,10 @@ export function Footer() {
               className="font-[family-name:var(--font-fraunces)] text-xl font-bold tracking-tight"
             >
               <span className="text-gold">MG</span>{" "}
-              MindGame Africa
+              {globalContent.institutionName}
             </Link>
             <p className="mt-4 text-[0.875rem] leading-relaxed text-cream/60 max-w-xs">
-              Performance science, research, education and professional practice for stronger performance capability in Africa.
+              {globalContent.footerPositioningLine}
             </p>
           </div>
 
@@ -66,12 +67,11 @@ export function Footer() {
             © {new Date().getFullYear()} MindGame Africa. All rights reserved.
           </p>
           <div className="flex gap-6">
-            {/* TODO: build /privacy and /terms pages before real launch */}
-            <Link href="#" className="text-[0.8125rem] text-cream/40 hover:text-cream/70 transition-colors">
-              Privacy
+            <Link href="/privacy" className="text-[0.8125rem] text-cream/40 hover:text-cream/70 transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="#" className="text-[0.8125rem] text-cream/40 hover:text-cream/70 transition-colors">
-              Terms
+            <Link href="/terms" className="text-[0.8125rem] text-cream/40 hover:text-cream/70 transition-colors">
+              Terms of Use
             </Link>
           </div>
         </div>

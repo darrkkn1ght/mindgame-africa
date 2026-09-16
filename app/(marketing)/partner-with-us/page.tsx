@@ -1,36 +1,13 @@
 "use client";
 
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Card } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 import { PartnerForm } from "@/components/sections/PartnerForm";
 
-const partnershipRoutes = [
-  {
-    title: "Performance Engagements",
-    body: "For teams, clubs, academies, athletes, coaches and organisations that want to discuss a performance problem or intervention.",
-  },
-  {
-    title: "Research and Evaluation",
-    body: "For universities, researchers, sport organisations and other institutions interested in applied research, programme evaluation, data collection or joint studies.",
-  },
-  {
-    title: "University and Academic Collaboration",
-    body: "For departments and institutions interested in teaching, research, student development, internships, guest faculty, supervision or knowledge exchange.",
-  },
-  {
-    title: "Professional Education",
-    body: "For organisations seeking workshops, seminars, internal professional development or the co development of a structured learning programme.",
-  },
-  {
-    title: "Practitioner and Faculty Collaboration",
-    body: "For qualified specialists interested in contributing expertise, teaching, research, supervision or applied work.",
-  },
-  {
-    title: "Institutional and International Partnerships",
-    body: "For organisations interested in longer term research, education, technical collaboration, exchange or capacity development with a clear connection to MindGame Africa's mandate.",
-  },
-];
+import { partnerContent } from "@/lib/content";
 
 export default function PartnerWithUsPage() {
   return (
@@ -46,17 +23,14 @@ export default function PartnerWithUsPage() {
           >
             <SectionEyebrow
               variant="gold"
-              label="PARTNER WITH US"
+              label={partnerContent.hero.eyebrow}
               className="mb-6 md:mb-7"
             />
             <h1 className="font-[family-name:var(--font-fraunces)] text-cream tracking-tight text-balance leading-[1.08]">
-              Partner With MindGame Africa
+              {partnerContent.hero.heading}
             </h1>
             <p className="mt-6 md:mt-7 text-cream/85 max-w-[620px] text-[1.0625rem] md:text-[1.125rem] leading-[1.68]">
-              We are open to collaborations that strengthen performance
-              practice, research, professional education, practitioner
-              development and the production of useful knowledge around
-              performance in Africa.
+              {partnerContent.hero.supportingSentence}
             </p>
           </motion.div>
         </div>
@@ -74,16 +48,16 @@ export default function PartnerWithUsPage() {
           >
             <SectionEyebrow
               variant="gold-dark"
-              label="ROUTES TO COLLABORATION"
+              label={partnerContent.routesHeading.eyebrow}
               className="mb-4"
             />
             <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Partnership Routes
+              {partnerContent.routesHeading.heading}
             </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
-            {partnershipRoutes.map((route, idx) => (
+            {partnerContent.routes.map((route, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 18 }}
@@ -107,8 +81,17 @@ export default function PartnerWithUsPage() {
                       {route.title}
                     </h3>
                     <p className="text-navy/75 text-[0.9375rem] md:text-base leading-[1.65]">
-                      {route.body}
+                      {route.description}
                     </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-navy/[0.06]">
+                    <Button
+                      variant="secondary"
+                      href={route.destination}
+                      className="w-full justify-center"
+                    >
+                      {route.ctaLabel}
+                    </Button>
                   </div>
                 </Card>
               </motion.div>
@@ -118,7 +101,7 @@ export default function PartnerWithUsPage() {
       </section>
 
       {/* ── 3. Partner With Us Form ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
+      <section id="partner-form" className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
@@ -129,11 +112,11 @@ export default function PartnerWithUsPage() {
           >
             <SectionEyebrow
               variant="gold"
-              label="START A CONVERSATION"
+              label={partnerContent.form.eyebrow}
               className="mb-4"
             />
             <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Partner With Us
+              {partnerContent.form.heading}
             </h2>
           </motion.div>
 
@@ -143,7 +126,9 @@ export default function PartnerWithUsPage() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <PartnerForm />
+            <Suspense fallback={null}>
+              <PartnerForm />
+            </Suspense>
           </motion.div>
         </div>
       </section>

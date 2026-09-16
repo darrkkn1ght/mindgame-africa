@@ -4,8 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
+import { homeContent } from "@/lib/content";
 
 export function Hero() {
+  const { hero } = homeContent;
+
   return (
     <section
       className="relative min-h-[85vh] lg:min-h-[88vh] flex items-center overflow-hidden bg-navy bg-cover bg-center bg-no-repeat"
@@ -48,13 +51,13 @@ export function Hero() {
             {/* Eyebrow tag in gold, small-caps, mono-style */}
             <SectionEyebrow
               variant="gold"
-              label="PERFORMANCE · RESEARCH · EDUCATION"
+              label={hero.eyebrow}
               className="mb-6 md:mb-7"
             />
 
             {/* Headline with split gold accent on 'in Africa.' */}
             <h1 className="font-[family-name:var(--font-fraunces)] text-cream tracking-tight text-balance leading-[1.08]">
-              Developing the Human and Intellectual Infrastructure of Performance{" "}
+              {hero.headline.replace("in Africa.", "").trim()}{" "}
               <span className="relative inline-block text-gold">
                 in Africa.
                 {/* Thin gold underline for visual rhythm */}
@@ -70,19 +73,16 @@ export function Hero() {
           >
             {/* Supporting copy in cream/off-white */}
             <p className="mt-6 md:mt-7 text-cream/85 max-w-[560px] text-[1.0625rem] md:text-[1.125rem] leading-[1.68]">
-              MindGame Africa connects performance science, research, education
-              and professional practice to help athletes, teams, coaches,
-              organisations and practitioners understand performance problems,
-              develop capability and improve what happens in practice.
+              {hero.supportingSentence}
             </p>
 
             {/* CTAs: Gold primary + Cream-outline secondary */}
             <div className="mt-8 md:mt-10 flex flex-wrap gap-4 items-center">
-              <Button variant="primary" href="#what-we-do">
-                Explore What We Do
+              <Button variant="primary" href={hero.ctaSecondary.href}>
+                {hero.ctaSecondary.label}
               </Button>
-              <Button variant="secondary-cream" href="/partner-with-us">
-                Work With MindGame Africa
+              <Button variant="secondary-cream" href={hero.ctaPrimary.href}>
+                {hero.ctaPrimary.label}
               </Button>
             </div>
           </motion.div>

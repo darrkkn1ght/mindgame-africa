@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { homeContent } from "@/lib/content";
 
 export function ClosingCTA() {
+  const { closingCta } = homeContent;
+
   return (
     <section className="relative bg-navy py-20 md:py-28 lg:py-32">
       <div className="mx-auto max-w-[80rem] px-5 md:px-12">
@@ -15,12 +18,11 @@ export function ClosingCTA() {
           className="max-w-[820px]"
         >
           <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-            Have a performance problem, research question, learning need or
-            collaboration idea?
+            {closingCta.line}
           </h2>
           <div className="mt-10">
-            <Button variant="primary" href="/partner-with-us">
-              Start the Right Conversation With MindGame Africa
+            <Button variant="primary" href={closingCta.href}>
+              {closingCta.button}
             </Button>
           </div>
         </motion.div>

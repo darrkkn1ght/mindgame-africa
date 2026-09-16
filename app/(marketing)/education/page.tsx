@@ -2,312 +2,383 @@
 
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-
-const whoItIsFor = [
-  "Coaches and coaching staff.",
-  "Sport psychologists and mental performance practitioners.",
-  "Performance analysts and other sport science professionals.",
-  "Students and emerging practitioners.",
-  "Sport administrators and performance leaders.",
-  "University departments and academic programmes.",
-  "Teams, clubs, academies and federations seeking internal professional development.",
-];
-
-const developingProgrammeAreas = [
-  "Applied mental performance.",
-  "Coaching psychology and coach behaviour.",
-  "Athlete development.",
-  "Performance leadership.",
-  "Football performance analysis.",
-  "Referee performance.",
-  "Applied practitioner development.",
-  "Research literacy, evidence translation and professional practice.",
-];
-
-const howWeTeach = [
-  "Clear learning outcomes.",
-  "Evidence informed teaching.",
-  "Applied examples drawn from real performance environments.",
-  "Practical tools and structured reflection.",
-  "Case based discussion where appropriate.",
-  "Assessment or demonstration of learning where the programme requires it.",
-  "Access to qualified facilitators, faculty or specialist contributors.",
-  "Clear distinction between professional development and formal academic or statutory accreditation.",
-];
+import { SectionImage } from "@/components/ui/SectionImage";
+import { educationContent } from "@/lib/content";
 
 export default function EducationPage() {
+  const {
+    hero,
+    whatEducationMeans,
+    whoWeServe,
+    developingProgrammeAreas,
+    learningExperience,
+    statusNoticeMainNav,
+    cta,
+  } = educationContent;
+
   return (
     <>
-      {/* ── 1. Hero ── */}
+      {/* ── SECTION 1: What We Teach (§9.1 Hero & §9.2 Philosophy) ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px]"
+            className="max-w-[780px]"
           >
             <SectionEyebrow
               variant="gold"
-              label="EDUCATION AND PROFESSIONAL DEVELOPMENT"
+              label={hero.eyebrow}
               className="mb-6 md:mb-7"
             />
             <h1 className="font-[family-name:var(--font-fraunces)] text-cream tracking-tight text-balance leading-[1.08]">
-              Education and Professional Development
+              {hero.heading}
             </h1>
             <p className="mt-6 md:mt-7 text-cream/85 max-w-[620px] text-[1.0625rem] md:text-[1.125rem] leading-[1.68]">
-              We are building learning experiences that help practitioners,
-              coaches, students and performance professionals understand
-              evidence, apply it responsibly and improve the quality of their
-              work.
+              {hero.supportingSentence}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── 2. What We Teach ── */}
+      {/* What Education Means (§9.2) paired with Image Slot 1 */}
       <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px]"
-          >
-            <SectionEyebrow
-              variant="gold-dark"
-              label="WHAT WE TEACH"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              What We Teach
-            </h2>
-            <div className="mt-6 space-y-6 text-navy/80 text-base md:text-lg leading-relaxed max-w-[660px]">
-              <p>
-                Education at MindGame Africa should not be a collection of
-                motivational talks or generic online courses. Our programmes are
-                intended to be grounded in evidence, connected to real
-                performance problems and designed around what a participant
-                should be able to understand, apply, analyse or improve after the
-                learning experience.
-              </p>
-              <p>
-                Some learning experiences may be short workshops or professional
-                development sessions. Others may develop into structured
-                certificate programmes, practitioner pathways, seminars,
-                masterclasses or collaborative university offerings as the
-                institution grows.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-7 max-w-[680px]"
+            >
+              <SectionEyebrow
+                variant="gold-dark"
+                label={whatEducationMeans.eyebrow}
+                className="mb-4"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {whatEducationMeans.heading}
+              </h2>
+              <div className="mt-6 space-y-6 text-navy/80 text-base md:text-lg leading-relaxed">
+                <p>{whatEducationMeans.paragraph1}</p>
+                <p>{whatEducationMeans.paragraph2}</p>
+              </div>
+            </motion.div>
+
+            {/* Image Slot 1 (§17: University Teaching & Professional Learning) */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-5"
+            >
+              <SectionImage
+                name="Professional Learning"
+                subject="Applied Teaching & Discussion"
+                alt="MindGame Africa Education — Interactive professional learning, case discussion, and seminar engagement."
+                aspectRatio="4/3"
+                variant="cream"
+                caption="PEDAGOGICAL ENGAGEMENT // §17.1"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ── 3. Who It Is For ── */}
+      {/* ── SECTION 2: Who It Is For (§9.3) ──
+          Seven audiences rendered as cards in a responsive grid (NEVER a bullet list).
+      ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] mb-12 md:mb-16"
-          >
-            <SectionEyebrow
-              variant="gold"
-              label="WHO IT IS FOR"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Who It Is For
-            </h2>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-7 max-w-[700px]"
+            >
+              <SectionEyebrow
+                variant="gold"
+                label={whoWeServe.eyebrow}
+                className="mb-4"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {whoWeServe.heading}
+              </h2>
+              <p className="mt-4 text-cream/75 text-base md:text-lg leading-relaxed">
+                Structured learning designed for practitioners, coaches, analysts, and leaders operating across high-pressure performance systems.
+              </p>
+            </motion.div>
 
-          <ul className="space-y-4 max-w-[660px]">
-            {whoItIsFor.map((item, idx) => (
-              <motion.li
+            {/* Image Slot 2 (§17: Coaching Environments & Feedback) */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-5"
+            >
+              <SectionImage
+                name="Coach Development"
+                subject="Coaching Environment Review"
+                alt="MindGame Africa Education — Coach education, observation, and applied practice review in sporting settings."
+                aspectRatio="16/9"
+                variant="navy"
+                caption="COACHING REALITIES // §17.1"
+              />
+            </motion.div>
+          </div>
+
+          {/* 7 Audience Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {whoWeServe.audiences.map((item, idx) => (
+              <motion.article
                 key={idx}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: idx * 0.05,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                className="flex items-start gap-3.5"
-              >
-                <span
-                  className="mt-2.5 w-2 h-2 rounded-full bg-gold shrink-0"
-                  aria-hidden="true"
-                />
-                <span className="text-cream/85 text-base md:text-lg leading-relaxed">
-                  {item}
-                </span>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ── 4. Developing Programme Areas ── */}
-      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] mb-12 md:mb-16"
-          >
-            <SectionEyebrow
-              variant="gold-dark"
-              label="PROGRAMME AREAS"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Developing Programme Areas
-            </h2>
-            <p className="mt-4 text-navy/60 text-sm font-[family-name:var(--font-jetbrains-mono)] tracking-wide">
-              Active curriculum design areas — currently in development and not open for registration.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {developingProgrammeAreas.map((area, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, margin: "-30px" }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.45,
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
+                className={`rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300 flex flex-col justify-between ${
+                  idx === 6 ? "sm:col-span-2 lg:col-span-1" : ""
+                }`}
               >
-                <Card variant="default" className="h-full flex flex-col justify-between border border-navy/[0.06] shadow-[0_2px_12px_rgba(16,35,63,0.03)]">
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-5">
-                      <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold">
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-medium bg-navy/[0.06] text-navy/60 border border-navy/10">
-                        In Development
-                      </span>
-                    </div>
-                    <h3 className="font-[family-name:var(--font-fraunces)] text-lg md:text-xl font-bold text-navy leading-snug">
-                      {area}
-                    </h3>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-navy/[0.08]">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-[0.75rem] text-navy/50 tracking-wide">
-                      Not open for registration
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider uppercase">
+                      AUDIENCE {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/40 uppercase tracking-wider">
+                      Target Learner
                     </span>
                   </div>
-                </Card>
-              </motion.div>
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg font-bold tracking-tight">
+                    {item}
+                  </h3>
+                </div>
+                <div className="pt-4 mt-5 border-t border-white/10">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/45 uppercase tracking-wide">
+                    Professional Development Scope
+                  </span>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. How We Teach ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
+      {/* ── SECTION 3: How We Teach (§9.5 Learning Experience) ──
+          Eight learning-experience items rendered as structured cards.
+      ── */}
+      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] mb-12 md:mb-16"
-          >
-            <SectionEyebrow
-              variant="gold"
-              label="LEARNING EXPERIENCE"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              How We Teach
-            </h2>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-7 max-w-[680px]"
+            >
+              <SectionEyebrow
+                variant="gold-dark"
+                label={learningExperience.eyebrow}
+                className="mb-4"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {learningExperience.heading}
+              </h2>
+              <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
+                Our educational architecture combines conceptual clarity with direct transfer to competitive, coaching, and clinical environments.
+              </p>
+            </motion.div>
 
-          <ul className="space-y-4 max-w-[680px]">
-            {howWeTeach.map((item, idx) => (
-              <motion.li
+            {/* Image Slot 3 (§17: Practitioner Development & Workshops) */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-5"
+            >
+              <SectionImage
+                name="Practitioner Workshops"
+                subject="Applied Methods & Case Review"
+                alt="MindGame Africa Education — Structured practitioner development workshop, method review, and applied tools."
+                aspectRatio="4/3"
+                variant="cream"
+                caption="PRACTITIONER STANDARDS // §17.1"
+              />
+            </motion.div>
+          </div>
+
+          {/* 8 Learning Experience Items Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {learningExperience.features.map((item, idx) => (
+              <motion.article
                 key={idx}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
                 transition={{
-                  duration: 0.4,
+                  duration: 0.45,
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="flex items-start gap-3.5"
+                className="flex flex-col justify-between rounded-xl bg-white p-6 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300"
               >
-                <span
-                  className="mt-2.5 w-2 h-2 rounded-full bg-gold shrink-0"
-                  aria-hidden="true"
-                />
-                <span className="text-cream/85 text-base md:text-lg leading-relaxed">
-                  {item}
-                </span>
-              </motion.li>
+                <div>
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-green tracking-wider uppercase">
+                    STANDARD {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <p className="mt-3 text-navy/85 text-[0.9375rem] font-medium leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+                <div className="pt-4 mt-4 border-t border-navy/[0.06]">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-navy/45 uppercase tracking-wide">
+                    {idx === 7 ? "Statutory Boundary" : "Design Criterion"}
+                  </span>
+                </div>
+              </motion.article>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      {/* ── 6. Status Note ── */}
-      <section className="relative bg-cream border-t border-navy/[0.06] py-16 md:py-20 lg:py-24">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] rounded-lg border border-navy/10 bg-white/70 p-7 md:p-9 shadow-[0_2px_12px_rgba(16,35,63,0.03)]"
-          >
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
-              Portfolio Status
-            </span>
-            <p className="mt-3 text-navy/80 text-base md:text-lg leading-relaxed">
-              Our education and professional development portfolio is being
-              developed progressively. Current workshops, seminars and
-              structured programmes will be published here as they are ready.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── 7. Closing CTA ── */}
+      {/* ── SECTION 4: Developing Programme Areas (§9.4) ──
+          CRITICAL RESTRAINT:
+          - Eight developing programme areas rendered as cards
+          - Each carries a visible developing status
+          - NOTHING implies a programme is open for registration (no enrol, no register, no dates, no fees, no seat counts)
+      ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[820px]"
-          >
-            <SectionEyebrow
-              variant="gold"
-              label="WORK WITH US"
-              className="mb-6"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Interested in learning, teaching or developing a programme with us?
-            </h2>
-            <div className="mt-10">
-              <Button variant="primary" href="/partner-with-us">
-                Discuss Education and Professional Development
-              </Button>
-            </div>
-          </motion.div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="max-w-[720px]"
+            >
+              <SectionEyebrow
+                variant="gold"
+                label={developingProgrammeAreas.eyebrow}
+                className="mb-4"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {developingProgrammeAreas.heading}
+              </h2>
+              <p className="mt-4 text-cream/70 text-base md:text-lg leading-relaxed">
+                {developingProgrammeAreas.subheading}
+              </p>
+            </motion.div>
+            <span className="inline-flex items-center px-3 py-1 rounded text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy-soft text-cream/75 border border-white/10 shrink-0">
+              Not Open for Registration
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {developingProgrammeAreas.areas.map((area, idx) => (
+              <motion.article
+                key={area.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{
+                  duration: 0.45,
+                  delay: idx * 0.05,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                className="flex flex-col justify-between rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold">
+                      AREA {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-white/10 text-cream/80 border border-white/10">
+                      In Development
+                    </span>
+                  </div>
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg font-bold leading-snug">
+                    {area.title}
+                  </h3>
+                  <p className="mt-2 text-cream/70 text-xs sm:text-[0.8125rem] leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+                <div className="pt-4 mt-5 border-t border-white/10">
+                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-[0.6875rem] text-cream/45 uppercase tracking-wide">
+                    Future Offering // Non-active
+                  </span>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 5: Work With Us (§9.7 Status & Closing CTA) ──
+          Uses §9.7b string exactly:
+          "Our education and professional development portfolio is being developed progressively. Current workshops, seminars and structured programmes will be published here as they are ready."
+      ── */}
+      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
+        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+          <div className="max-w-[840px] mx-auto">
+            {/* Intentional §9.7b Status Box */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              className="rounded-2xl border border-navy/15 bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(16,35,63,0.05)] mb-14"
+            >
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-navy/[0.08]">
+                <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                  Portfolio Development Notice (§9.7b)
+                </span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
+                  Main Catalogue State
+                </span>
+              </div>
+              <p className="text-navy/85 text-lg md:text-xl font-[family-name:var(--font-fraunces)] leading-relaxed">
+                {statusNoticeMainNav}
+              </p>
+            </motion.div>
+
+            {/* Closing CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-center"
+            >
+              <SectionEyebrow
+                variant="gold-dark"
+                label={cta.eyebrow}
+                className="mb-4 mx-auto"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {cta.line}
+              </h2>
+              <div className="mt-10">
+                <Button variant="primary" href={cta.href}>
+                  {cta.button}
+                </Button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </>

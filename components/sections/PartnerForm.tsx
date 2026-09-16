@@ -1,92 +1,85 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { partnerContent } from "@/lib/content";
+import {
+  PartnerFormSchema,
+  PartnerFormData,
+  collaborationTypeOptions,
+} from "@/lib/validations";
 
-interface FormData {
-  fullName: string;
-  organisation: string;
-  role: string;
-  email: string;
-  country: string;
-  collaborationType: string;
-  discussionTopic: string;
-  usefulOutcome: string;
-  preferredContact: string;
-  consent: boolean;
-}
-
-const initialFormData: FormData = {
-  fullName: "",
-  organisation: "",
-  role: "",
-  email: "",
-  country: "",
-  collaborationType: "",
-  discussionTopic: "",
-  usefulOutcome: "",
-  preferredContact: "Email",
-  consent: false,
-};
-
-const collaborationOptions = [
-  "Performance Engagement",
-  "Research and Evaluation",
-  "University or Academic Collaboration",
-  "Professional Education",
-  "Practitioner or Faculty Collaboration",
-  "Institutional or International Partnership",
-  "Other",
+const contactOptions = [
+  "Email",
+  "Video call",
+  "Written brief exchange",
 ];
 
-const contactOptions = ["Email", "Video call", "Phone call"];
-
 export function PartnerForm() {
-  const [formData, setFormData] = useState<FormData>(initialFormData);
-  const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
+  const searchParams = useSearchParams();
+  const typeParam = searchParams.get("type");
+
+  const [formData, setFormData] = useState<PartnerFormData>(() => {
+    const validCollab =
+      typeParam && (collaborationTypeOptions as readonly string[]).includes(typeParam)
+        ? (typeParam as (typeof collaborationTypeOptions)[number])
+        : ("" as unknown as (typeof collaborationTypeOptions)[number]);
+
+    return {
+      fullName: "",
+      organisation: "",
+      role: "",
+      email: "",
+      country: "",
+      collaborationType: validCollab,
+      discussionTopic: "",
+      usefulOutcome: "",
+      preferredContact: "Email",
+      consent: false,
+    };
+  });
+
+  // Synchronize state during render if URL query parameter changes
+  const [prevTypeParam, setPrevTypeParam] = useState(typeParam);
+  if (typeParam !== prevTypeParam) {
+    setPrevTypeParam(typeParam);
+    if (typeParam && (collaborationTypeOptions as readonly string[]).includes(typeParam)) {
+      setFormData((prev) => ({
+        ...prev,
+        collaborationType: typeParam as (typeof collaborationTypeOptions)[number],
+      }));
+    }
+  }
+
+  const [errors, setErrors] = useState<Partial<Record<keyof PartnerFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validate = (): boolean => {
-    const newErrors: Partial<Record<keyof FormData, string>> = {};
-
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = "Please provide your full name.";
+    const result = PartnerFormSchema.safeParse(formData);
+    if (!result.success) {
+      const newErrors: Partial<Record<keyof PartnerFormData, string>> = {};
+      for (const issue of result.error.issues) {
+        const field = issue.path[0] as keyof PartnerFormData;
+        if (field && !newErrors[field]) {
+          newErrors[field] = issue.message;
+        }
+      }
+      setErrors(newErrors);
+      return false;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!formData.email.trim()) {
-      newErrors.email = "Please provide your email address.";
-    } else if (!emailRegex.test(formData.email.trim())) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-
-    if (!formData.country.trim()) {
-      newErrors.country = "Please provide your country.";
-    }
-
-    if (!formData.collaborationType) {
-      newErrors.collaborationType = "Please select a type of collaboration.";
-    }
-
-    if (!formData.discussionTopic.trim()) {
-      newErrors.discussionTopic =
-        "Please describe what you would like to discuss.";
-    }
-
-    if (!formData.consent) {
-      newErrors.consent =
-        "Please confirm this information can be used to respond to your inquiry.";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors({});
+    return true;
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     if (!validate()) {
       return;
@@ -112,13 +105,27 @@ export function PartnerForm() {
       if (response.ok) {
         setIsSubmitted(true);
       } else {
-        setSubmitError(
-          "Something went wrong — please try again or email us directly."
-        );
+        let errMessage =
+          "There was an issue submitting your form. Please try again or contact inquiries@mindgameafrica.com.";
+        try {
+          const data = await response.json();
+          if (data?.errors && Array.isArray(data.errors) && data.errors.length > 0) {
+            errMessage =
+              data.errors
+                .map((err: { message?: string }) => err.message || "")
+                .filter(Boolean)
+                .join(", ") || errMessage;
+          } else if (data?.error) {
+            errMessage = typeof data.error === "string" ? data.error : errMessage;
+          }
+        } catch {
+          // Use default fallback
+        }
+        setSubmitError(errMessage);
       }
     } catch {
       setSubmitError(
-        "Something went wrong — please try again or email us directly."
+        "There was an issue submitting your form. Please try again or contact inquiries@mindgameafrica.com."
       );
     } finally {
       setIsSubmitting(false);
@@ -126,7 +133,7 @@ export function PartnerForm() {
   };
 
   const handleChange = (
-    field: keyof FormData,
+    field: keyof PartnerFormData,
     value: string | boolean
   ) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -136,9 +143,21 @@ export function PartnerForm() {
   };
 
   const handleReset = () => {
-    setFormData(initialFormData);
+    setFormData({
+      fullName: "",
+      organisation: "",
+      role: "",
+      email: "",
+      country: "",
+      collaborationType: "" as unknown as (typeof collaborationTypeOptions)[number],
+      discussionTopic: "",
+      usefulOutcome: "",
+      preferredContact: "Email",
+      consent: false,
+    });
     setErrors({});
     setIsSubmitted(false);
+    setSubmitError(null);
   };
 
   if (isSubmitted) {
@@ -150,7 +169,7 @@ export function PartnerForm() {
           </div>
           <div>
             <h3 className="font-[family-name:var(--font-fraunces)] text-2xl sm:text-3xl font-bold text-navy tracking-tight">
-              Thanks — we&apos;ll be in touch.
+              Thank you. We&apos;ll review your inquiry and be in touch.
             </h3>
             <p className="mt-3 text-navy/75 text-base md:text-lg leading-relaxed">
               We have received your collaboration inquiry and will review it
@@ -174,8 +193,7 @@ export function PartnerForm() {
   return (
     <div className="rounded-2xl bg-white p-8 md:p-12 text-navy border border-navy/10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] max-w-[860px]">
       <p className="text-navy/75 text-base md:text-lg leading-relaxed mb-8 pb-6 border-b border-navy/10">
-        Tell us what you are trying to build, examine or improve, and where you
-        think MindGame Africa may fit.
+        {partnerContent.form.intro}
       </p>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-6">
@@ -185,7 +203,7 @@ export function PartnerForm() {
             htmlFor="fullName"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Full name{" "}
+            {partnerContent.form.labels.fullName}{" "}
             <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
               *
             </span>
@@ -214,9 +232,9 @@ export function PartnerForm() {
               htmlFor="organisation"
               className="block text-sm font-semibold text-navy mb-2"
             >
-              Organisation or institution{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
-                (optional)
+              {partnerContent.form.labels.organisation}{" "}
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+                *
               </span>
             </label>
             <input
@@ -225,8 +243,15 @@ export function PartnerForm() {
               value={formData.organisation}
               onChange={(e) => handleChange("organisation", e.target.value)}
               placeholder="e.g. Club, University, Federation"
-              className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+              className={`w-full rounded-md border bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold ${
+                errors.organisation ? "border-orange" : "border-navy/20"
+              }`}
             />
+            {errors.organisation && (
+              <p className="mt-1.5 text-xs text-orange font-medium">
+                {errors.organisation}
+              </p>
+            )}
           </div>
 
           <div>
@@ -234,9 +259,9 @@ export function PartnerForm() {
               htmlFor="role"
               className="block text-sm font-semibold text-navy mb-2"
             >
-              Role or position{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
-                (optional)
+              {partnerContent.form.labels.role}{" "}
+              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+                *
               </span>
             </label>
             <input
@@ -245,8 +270,15 @@ export function PartnerForm() {
               value={formData.role}
               onChange={(e) => handleChange("role", e.target.value)}
               placeholder="e.g. Head Coach, Director, Researcher"
-              className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+              className={`w-full rounded-md border bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold ${
+                errors.role ? "border-orange" : "border-navy/20"
+              }`}
             />
+            {errors.role && (
+              <p className="mt-1.5 text-xs text-orange font-medium">
+                {errors.role}
+              </p>
+            )}
           </div>
         </div>
 
@@ -257,7 +289,7 @@ export function PartnerForm() {
               htmlFor="email"
               className="block text-sm font-semibold text-navy mb-2"
             >
-              Email address{" "}
+              {partnerContent.form.labels.email}{" "}
               <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
                 *
               </span>
@@ -284,7 +316,7 @@ export function PartnerForm() {
               htmlFor="country"
               className="block text-sm font-semibold text-navy mb-2"
             >
-              Country{" "}
+              {partnerContent.form.labels.country}{" "}
               <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
                 *
               </span>
@@ -294,7 +326,7 @@ export function PartnerForm() {
               type="text"
               value={formData.country}
               onChange={(e) => handleChange("country", e.target.value)}
-              placeholder="e.g. Nigeria, South Africa, Kenya, UK"
+              placeholder="e.g. Kenya, Ghana, South Africa, UK"
               className={`w-full rounded-md border bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold ${
                 errors.country ? "border-orange" : "border-navy/20"
               }`}
@@ -313,7 +345,7 @@ export function PartnerForm() {
             htmlFor="collaborationType"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Type of collaboration{" "}
+            {partnerContent.form.labels.collaborationType}{" "}
             <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
               *
             </span>
@@ -321,13 +353,18 @@ export function PartnerForm() {
           <select
             id="collaborationType"
             value={formData.collaborationType}
-            onChange={(e) => handleChange("collaborationType", e.target.value)}
+            onChange={(e) =>
+              handleChange(
+                "collaborationType",
+                e.target.value as (typeof collaborationTypeOptions)[number]
+              )
+            }
             className={`w-full rounded-md border bg-cream/30 px-4 py-3 text-navy text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold ${
               errors.collaborationType ? "border-orange" : "border-navy/20"
             }`}
           >
             <option value="">Select a collaboration type...</option>
-            {collaborationOptions.map((opt) => (
+            {collaborationTypeOptions.map((opt) => (
               <option key={opt} value={opt}>
                 {opt}
               </option>
@@ -346,7 +383,7 @@ export function PartnerForm() {
             htmlFor="discussionTopic"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Briefly describe what you would like to discuss.{" "}
+            {partnerContent.form.labels.discussionTopic}{" "}
             <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
               *
             </span>
@@ -374,9 +411,9 @@ export function PartnerForm() {
             htmlFor="usefulOutcome"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            What would a useful outcome from this collaboration look like?{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
-              (optional)
+            {partnerContent.form.labels.usefulOutcome}{" "}
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              *
             </span>
           </label>
           <textarea
@@ -384,9 +421,16 @@ export function PartnerForm() {
             rows={3}
             value={formData.usefulOutcome}
             onChange={(e) => handleChange("usefulOutcome", e.target.value)}
-            placeholder="e.g. A tailored assessment, a collaborative research paper, a certified workshop series, structured mentorship..."
-            className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] leading-relaxed transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+            placeholder="e.g. a tailored assessment, a collaborative research paper, a structured workshop series, ongoing mentorship..."
+            className={`w-full rounded-md border bg-cream/30 px-4 py-3 text-navy placeholder:text-navy/40 text-[0.9375rem] leading-relaxed transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold ${
+              errors.usefulOutcome ? "border-orange" : "border-navy/20"
+            }`}
           />
+          {errors.usefulOutcome && (
+            <p className="mt-1.5 text-xs text-orange font-medium">
+              {errors.usefulOutcome}
+            </p>
+          )}
         </div>
 
         {/* Preferred way to continue conversation */}
@@ -395,13 +439,18 @@ export function PartnerForm() {
             htmlFor="preferredContact"
             className="block text-sm font-semibold text-navy mb-2"
           >
-            Preferred way to continue the conversation
+            {partnerContent.form.labels.preferredContact}{" "}
+            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              *
+            </span>
           </label>
           <select
             id="preferredContact"
             value={formData.preferredContact}
             onChange={(e) => handleChange("preferredContact", e.target.value)}
-            className="w-full rounded-md border border-navy/20 bg-cream/30 px-4 py-3 text-navy text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold"
+            className={`w-full rounded-md border bg-cream/30 px-4 py-3 text-navy text-[0.9375rem] transition-colors focus:border-gold focus:bg-white focus:outline-none focus:ring-2 focus:ring-gold ${
+              errors.preferredContact ? "border-orange" : "border-navy/20"
+            }`}
           >
             {contactOptions.map((opt) => (
               <option key={opt} value={opt}>
@@ -409,6 +458,11 @@ export function PartnerForm() {
               </option>
             ))}
           </select>
+          {errors.preferredContact && (
+            <p className="mt-1.5 text-xs text-orange font-medium">
+              {errors.preferredContact}
+            </p>
+          )}
         </div>
 
         {/* Consent Checkbox */}
@@ -421,7 +475,7 @@ export function PartnerForm() {
               className="mt-1 h-4 w-4 rounded border-navy/30 text-gold accent-gold focus:ring-gold"
             />
             <span className="text-sm text-navy/80 leading-snug">
-              I confirm this information can be used to respond to my inquiry.{" "}
+              {partnerContent.form.labels.consent}{" "}
               <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
                 *
               </span>
@@ -449,7 +503,9 @@ export function PartnerForm() {
             disabled={isSubmitting}
             className="w-full sm:w-auto"
           >
-            {isSubmitting ? "Submitting..." : "Submit Inquiry"}
+            {isSubmitting
+              ? partnerContent.form.labels.submittingButton
+              : partnerContent.form.labels.submitButton}
           </Button>
         </div>
       </form>

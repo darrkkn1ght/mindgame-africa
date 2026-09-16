@@ -3,167 +3,218 @@
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Button } from "@/components/ui/Button";
-
-const functionItems = [
-  "Help frame performance problems in a way that allows the right disciplines to contribute.",
-  "Connect scientific knowledge with training, competition and professional practice.",
-  "Support assessment and interpretation where appropriate.",
-  "Encourage collaboration between specialists rather than isolated professional silos.",
-  "Translate complex findings into decisions that athletes, coaches and organisations can use.",
-  "Create stronger links between African performance environments and contemporary performance science.",
-];
-
-const futureAreas = [
-  "Performance psychology and behavioural performance.",
-  "Coaching science.",
-  "Performance analysis.",
-  "Exercise physiology.",
-  "Biomechanics.",
-  "Strength and conditioning.",
-  "Nutrition and recovery.",
-  "Research methods, data and performance measurement.",
-];
+import { SectionImage } from "@/components/ui/SectionImage";
+import { performanceScienceContent } from "@/lib/content";
 
 export default function PerformanceSciencePage() {
+  const { hero, intro, functionItems, futureCapabilityAreas, cta } =
+    performanceScienceContent;
+
   return (
     <>
-      {/* ── 1. Hero ── */}
+      {/* ── 1. Hero (§7.1) ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px]"
+            className="max-w-[780px]"
           >
             <SectionEyebrow
               variant="gold"
-              label="PERFORMANCE SCIENCE"
+              label={hero.eyebrow}
               className="mb-6 md:mb-7"
             />
             <h1 className="font-[family-name:var(--font-fraunces)] text-cream tracking-tight text-balance leading-[1.08]">
-              Performance Science
+              {hero.heading}
             </h1>
-            <p className="mt-6 md:mt-7 text-cream/85 max-w-[600px] text-[1.0625rem] md:text-[1.125rem] leading-[1.68]">
-              Performance is rarely explained by one discipline. MindGame Africa
-              is being built to connect the scientific perspectives that help us
-              understand how people prepare, adapt, perform and recover.
+            <p className="mt-6 md:mt-7 text-cream/85 max-w-[620px] text-[1.0625rem] md:text-[1.125rem] leading-[1.68]">
+              {hero.supportingSentence}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── 2. Page Introduction ── */}
+      {/* ── 2. Page Introduction (§7.2) paired with Image Slot 1 ── */}
       <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px]"
-          >
-            <SectionEyebrow
-              variant="gold-dark"
-              label="DIRECTION"
-              className="mb-4"
-            />
-            <div className="mt-6 space-y-6 text-navy/80 text-base md:text-lg leading-relaxed max-w-[660px]">
-              <p>
-                Our performance science direction is multidisciplinary.
-                Psychology and behavioural performance are important parts of
-                that work, but they are not the whole of performance. Depending
-                on the question, performance may also need to be understood
-                through coaching science, physiology, biomechanics, strength and
-                conditioning, performance analysis, nutrition, data and other
-                relevant disciplines.
-              </p>
-              <p>
-                MindGame Africa will develop this capability responsibly. We
-                will not present a discipline, laboratory or technical service
-                as active until the qualified people, methods and infrastructure
-                required to deliver it properly are genuinely in place.
-              </p>
-            </div>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-7 max-w-[680px]"
+            >
+              <SectionEyebrow
+                variant="gold-dark"
+                label={intro.eyebrow}
+                className="mb-4"
+              />
+              <div className="space-y-6 text-navy/80 text-base md:text-lg leading-relaxed">
+                <p>{intro.paragraph1}</p>
+                <p>{intro.paragraph2}</p>
+              </div>
+            </motion.div>
+
+            {/* Image Slot 1 (§17: Multidisciplinary Performance Data & Discussion) */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-5"
+            >
+              <SectionImage
+                name="Performance Science Inquiry"
+                subject="Multidisciplinary Data & Context"
+                alt="Abstract biomechanical force curves and temporal telemetry lines representing performance science telemetry"
+                aspectRatio="4/3"
+                variant="cream"
+                caption="SCIENTIFIC INQUIRY // §17.1"
+                src="/images/performance-data/perf-science-telemetry-4x3.jpg"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ── 3. What the Performance Science Function Should Do ── */}
+      {/* ── 3. What the Performance Science Function Should Do (§7.3) ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px]"
-          >
-            <SectionEyebrow
-              variant="gold"
-              label="FUNCTION"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              What the Performance Science Function Should Do
-            </h2>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-18">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="max-w-[680px]"
+            >
+              <SectionEyebrow
+                variant="gold"
+                label={functionItems.eyebrow}
+                className="mb-4"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {functionItems.heading}
+              </h2>
+            </motion.div>
+            <p className="text-cream/65 text-sm font-[family-name:var(--font-jetbrains-mono)] max-w-[340px]">
+              Guiding principles for scientific translation and cross-discipline collaboration.
+            </p>
+          </div>
 
-            <ul className="mt-8 space-y-4 max-w-[660px]">
-              {functionItems.map((item, idx) => (
-                <motion.li
-                  key={idx}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.4,
-                    delay: idx * 0.06,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  className="flex items-start gap-3.5"
-                >
-                  <span
-                    className="mt-2.5 w-2 h-2 rounded-full bg-gold shrink-0"
-                    aria-hidden="true"
-                  />
-                  <span className="text-cream/80 text-base md:text-lg leading-relaxed">
+          {/* Numbered visual flow: Horizontal on desktop (6 columns), stacked on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-4">
+            {functionItems.items.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{
+                  duration: 0.45,
+                  delay: idx * 0.08,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
+                className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-2xl font-bold text-gold">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    {idx < 5 && (
+                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+                        &rarr;
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-cream/85 text-[0.9375rem] leading-relaxed">
                     {item}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Image Slot 2 (§17: University Collaboration & Teaching) */}
+          <div className="mt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <SectionImage
+                name="Academic & Faculty Collaboration"
+                subject="University Teaching & Discussion"
+                alt="MindGame Africa — Academic seminar and faculty collaboration connecting performance science with field practice."
+                aspectRatio="21/9"
+                variant="navy"
+                caption="ACADEMIC COLLABORATION // §17.1"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ── 4. Areas of Future and Developing Capability ── */}
+      {/* ── 4. Areas of Future and Developing Capability (§7.4) ──
+          CRITICAL RESTRAINT (§7.4):
+          - Section label carries status: "Areas of Future and Developing Capability"
+          - No Learn More link, no price, no booking affordance, no enquiry button
+          - Nothing implying an operational lab or current department of specialists
+          - Rendered as muted card grid with visible developing tags
+      ── */}
       <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[760px] mb-12 md:mb-16"
-          >
-            <SectionEyebrow
-              variant="gold-dark"
-              label="DEVELOPING"
-              className="mb-4"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Areas of Future and Developing Capability
-            </h2>
-            <p className="mt-3 text-navy/50 text-sm font-[family-name:var(--font-jetbrains-mono)] tracking-wide">
-              Areas of multidisciplinary direction — not all currently active.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-7 max-w-[720px]"
+            >
+              <SectionEyebrow
+                variant="gold-dark"
+                label={futureCapabilityAreas.eyebrow}
+                className="mb-4"
+              />
+              <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
+                {futureCapabilityAreas.heading}
+              </h2>
+              <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
+                {futureCapabilityAreas.subheading}
+              </p>
+            </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 max-w-[1000px]">
-            {futureAreas.map((area, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 14 }}
+            {/* Image Slot 3 (§17: Field-based observation & recording) */}
+            <motion.div
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              className="lg:col-span-5"
+            >
+              <SectionImage
+                name="Field Observation"
+                subject="Observational Movement Recording"
+                alt="MindGame Africa — Field-based performance observation capturing movement quality and technical execution."
+                aspectRatio="4/3"
+                variant="cream"
+                caption="FIELD CAPABILITY DEVELOPMENT // §17.1"
+              />
+            </motion.div>
+          </div>
+
+          {/* 8 Areas of Multidisciplinary Direction — Muted Card Grid with Explicit Status Badge */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {futureCapabilityAreas.capabilities.map((cap, idx) => (
+              <motion.article
+                key={cap.id}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
@@ -171,21 +222,36 @@ export default function PerformanceSciencePage() {
                   delay: idx * 0.06,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="rounded-lg border border-dashed border-navy/20 bg-transparent px-5 py-4 transition-colors duration-200 hover:border-navy/35 hover:bg-white/40"
+                className="relative flex flex-col justify-between rounded-xl border border-dashed border-navy/25 bg-white/60 p-6 transition-all duration-200 hover:border-navy/40 hover:bg-white"
               >
-                <span className="font-[family-name:var(--font-jetbrains-mono)] text-[0.6875rem] font-medium text-navy/35 tracking-wider uppercase">
-                  {String(idx + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-1.5 text-navy/65 text-[0.9375rem] leading-snug font-medium">
-                  {area}
-                </p>
-              </motion.div>
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-navy/40 uppercase tracking-wider">
+                      DIR {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy/5 text-navy/60 border border-navy/10">
+                      Developing Direction
+                    </span>
+                  </div>
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-lg font-bold tracking-tight leading-snug">
+                    {cap.title}
+                  </h3>
+                  <p className="mt-2 text-navy/65 text-xs sm:text-[0.8125rem] leading-relaxed">
+                    {cap.description}
+                  </p>
+                </div>
+                <div className="pt-4 mt-5 border-t border-navy/[0.06]">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-navy/40 tracking-wide uppercase">
+                    Non-operational // Future Scope
+                  </span>
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. Closing CTA ── */}
+      {/* ── 5. Closing CTA (§7.5) ── */}
       <section className="relative bg-navy py-20 md:py-28 lg:py-32">
         <div className="mx-auto max-w-[80rem] px-5 md:px-12">
           <motion.div
@@ -195,14 +261,17 @@ export default function PerformanceSciencePage() {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="max-w-[820px]"
           >
+            <SectionEyebrow
+              variant="gold"
+              label={cta.eyebrow}
+              className="mb-4"
+            />
             <h2 className="font-[family-name:var(--font-fraunces)] text-cream text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              Are you a performance specialist, academic department, research
-              group or organisation interested in contributing to
-              multidisciplinary performance work in Africa?
+              {cta.line}
             </h2>
             <div className="mt-10">
-              <Button variant="primary" href="/partner-with-us">
-                Explore Collaboration With MindGame Africa
+              <Button variant="primary" href={cta.href}>
+                {cta.button}
               </Button>
             </div>
           </motion.div>

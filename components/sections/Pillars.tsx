@@ -4,77 +4,19 @@ import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { homeContent } from "@/lib/content";
+import type { Pillar } from "@/lib/types/content";
 
-interface Pillar {
-  number: string;
-  title: string;
-  description: string;
-  accent: "gold" | "green";
-  theme: "navy" | "cream";
-  href: string;
-  isFeatured?: boolean;
+interface DisplayPillar extends Pillar {
+  isFeatured: boolean;
   tags?: string[];
-  secondaryLink?: {
-    text: string;
-    linkText: string;
-    href: string;
-  };
 }
 
-const pillars: Pillar[] = [
-  {
-    number: "01",
-    title: "Applied Performance Practice",
-    description:
-      "Evidence-informed assessment and intervention for athletes, coaches, teams and other high-pressure performers, with particular strength in performance psychology, mental performance and behavioural performance.",
-    accent: "gold",
-    theme: "navy",
-    href: "/performance-services/applied-performance-practice",
-    isFeatured: true,
-    tags: ["Performance Psychology", "Mental Performance", "Behavioural Performance"],
-  },
-  {
-    number: "02",
-    title: "Performance Science",
-    description:
-      "A multidisciplinary approach to understanding performance through the interaction of psychological, behavioural, physiological, biomechanical, technical, analytical and contextual factors.",
-    accent: "green",
-    theme: "cream",
-    href: "/research/performance-science",
-  },
-  {
-    number: "03",
-    title: "Research & Knowledge",
-    description:
-      "Original and commissioned research, programme evaluation, evidence reviews, frameworks, reports and knowledge translation focused on real performance questions.",
-    accent: "gold",
-    theme: "cream",
-    href: "/research",
-  },
-  {
-    number: "04",
-    title: "Education & Professional Development",
-    description:
-      "Short courses, workshops, masterclasses and structured learning for practitioners, coaches, students and sport professionals, with clear learning outcomes and accurate certificate language.",
-    accent: "green",
-    theme: "navy",
-    href: "/education",
-  },
-  {
-    number: "05",
-    title: "Practitioner Development",
-    description:
-      "MindGame Africa is being built to help strengthen the route from academic learning to competent professional practice. This includes future opportunities for internships, supervised experience, practitioner education, mentoring, applied projects and collaboration with universities and experienced specialists.",
-    accent: "gold",
-    theme: "cream",
-    href: "/education",
-    secondaryLink: {
-      text: "Interested in future opportunities?",
-      linkText: "Get in touch.",
-      href: "/partner-with-us",
-    },
-  },
-];
+const pillars: DisplayPillar[] = homeContent.whatWeDo.pillars.map((p, idx) => ({
+  ...p,
+  isFeatured: idx === 0,
+  tags: idx === 0 ? ["Performance Psychology", "Mental Performance", "Behavioural Performance"] : undefined,
+}));
 
 export function Pillars() {
   return (
@@ -84,11 +26,11 @@ export function Pillars() {
         <div className="max-w-[760px] mb-12 md:mb-16">
           <SectionEyebrow
             variant="gold-dark"
-            label="WHAT WE DO"
+            label={homeContent.whatWeDo.eyebrow}
             className="mb-4"
           />
           <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-            How MindGame Africa Works Across Performance
+            {homeContent.whatWeDo.heading}
           </h2>
         </div>
 
