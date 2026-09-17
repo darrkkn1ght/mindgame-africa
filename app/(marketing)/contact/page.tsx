@@ -113,7 +113,7 @@ export default function ContactPage() {
                     : "text-navy/50 hover:text-navy/80"
                 }`}
               >
-                <span>Performance & Collaboration Inquiry (§14.1)</span>
+                <span>Performance & Collaboration Inquiry</span>
                 {activeTab === "detailed" && (
                   <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold" />
                 )}

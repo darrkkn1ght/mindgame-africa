@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Button } from "@/components/ui/Button";
@@ -18,9 +19,32 @@ export default function AppliedPerformancePracticePage() {
 
   return (
     <>
-      {/* ── 1. Hero (§6.1) ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+      {/* ── 1. Hero with Atmospheric Photography Backdrop ── */}
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-navy py-20 md:py-28 lg:py-32">
+        {/* Background photo */}
+        <Image
+          src="/images/coaching-environments/services-coach-feedback-16x9.jpg"
+          alt="MindGame Africa — Applied performance practice, athlete and coach consultation"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center select-none pointer-events-none opacity-40"
+        />
+
+        {/* Navy gradient scrim overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/88 to-navy/55 pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* Soft bottom dissolve into cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-cream via-cream/30 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[80rem] w-full px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -191,7 +215,7 @@ export default function AppliedPerformancePracticePage() {
             </motion.div>
           </div>
 
-          {/* 5 Audience Cards */}
+          {/* 5 Audience Cards — Clean Editorial Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {whoThisIsFor.audiences.map((audience, idx) => (
               <motion.article
@@ -204,23 +228,16 @@ export default function AppliedPerformancePracticePage() {
                   delay: idx * 0.08,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className={`flex flex-col justify-between rounded-xl bg-white p-7 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300 ${
-                  idx === 4 ? "sm:col-span-2 lg:col-span-2" : ""
+                className={`rounded-xl bg-white p-7 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300 flex flex-col justify-start ${
+                  idx === 4 ? "sm:col-span-2 lg:col-span-1" : ""
                 }`}
               >
-                <div>
-                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
-                    AUDIENCE {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-xl sm:text-2xl font-bold tracking-tight mt-3">
-                    {audience}
-                  </h3>
-                </div>
-                <div className="pt-5 mt-5 border-t border-navy/[0.06]">
-                  <span className="text-xs text-navy/50 font-[family-name:var(--font-inter)]">
-                    Direct applied consultation
-                  </span>
-                </div>
+                <span className="font-[family-name:var(--font-inter)] text-xs font-bold text-green w-fit px-2.5 py-0.5 rounded bg-green/10 mb-4">
+                  0{idx + 1}
+                </span>
+                <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-xl sm:text-2xl font-bold tracking-tight">
+                  {audience}
+                </h3>
               </motion.article>
             ))}
           </div>
@@ -270,8 +287,8 @@ export default function AppliedPerformancePracticePage() {
             </motion.div>
           </div>
 
-          {/* 6 Individual Question Cards — Exact wording preserved */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* 6 Performance Questions — Refined 2-Column Editorial Spread */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {performanceQuestions.questions.map((question, idx) => (
               <motion.div
                 key={idx}
@@ -283,21 +300,16 @@ export default function AppliedPerformancePracticePage() {
                   delay: idx * 0.07,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-7 border border-white/10 hover:border-gold/40 transition-all duration-300"
+                className="relative rounded-xl bg-navy-soft p-7 md:p-8 border-l-4 border-l-gold border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between"
               >
-                <div>
-                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
-                    QUESTION {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <p className="font-[family-name:var(--font-fraunces)] text-cream text-lg sm:text-xl font-medium leading-snug mt-3 italic">
-                    &ldquo;{question}&rdquo;
-                  </p>
-                </div>
-                <div className="pt-4 mt-6 border-t border-white/10">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/40 uppercase tracking-wider">
-                    APPLIED INQUIRY FOCUS
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-bold text-gold px-2.5 py-0.5 rounded bg-gold/10 border border-gold/20">
+                    Inquiry {String(idx + 1).padStart(2, "0")}
                   </span>
                 </div>
+                <p className="font-[family-name:var(--font-fraunces)] text-cream text-lg sm:text-xl font-medium leading-relaxed italic">
+                  &ldquo;{question}&rdquo;
+                </p>
               </motion.div>
             ))}
           </div>

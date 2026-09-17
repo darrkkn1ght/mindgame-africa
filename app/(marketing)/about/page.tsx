@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Card } from "@/components/ui/Card";
@@ -21,9 +22,32 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* ── 1. Hero (§4.1) ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+      {/* ── 1. Hero with Atmospheric Photography Backdrop ── */}
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-navy py-20 md:py-28 lg:py-32">
+        {/* Background photo */}
+        <Image
+          src="/images/multidisciplinary-collaboration/partner-institutional-meeting-16x9.jpg"
+          alt="MindGame Africa — Multidisciplinary institutional collaboration and strategic capability development"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center select-none pointer-events-none opacity-40"
+        />
+
+        {/* Navy gradient scrim overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/88 to-navy/55 pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* Soft bottom dissolve into cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-cream via-cream/30 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[80rem] w-full px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}

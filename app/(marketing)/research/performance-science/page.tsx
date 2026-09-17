@@ -226,7 +226,7 @@ export default function PerformanceSciencePage() {
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-navy/40 uppercase tracking-wider">
-                      DIR {String(idx + 1).padStart(2, "0")}
+                      Area {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/5 text-navy/60 border border-navy/10">
                       Developing Direction
@@ -238,11 +238,6 @@ export default function PerformanceSciencePage() {
                   <p className="mt-2 text-navy/65 text-xs sm:text-[0.8125rem] leading-relaxed">
                     {cap.description}
                   </p>
-                </div>
-                <div className="pt-4 mt-5 border-t border-navy/[0.06]">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/40 tracking-wide uppercase">
-                    Future Scope · Developing Capability
-                  </span>
                 </div>
               </motion.article>
             ))}

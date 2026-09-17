@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { Button } from "@/components/ui/Button";
@@ -19,9 +20,32 @@ export default function EducationPage() {
 
   return (
     <>
-      {/* ── SECTION 1: What We Teach (§9.1 Hero & §9.2 Philosophy) ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+      {/* ── SECTION 1: What We Teach — Hero with Atmospheric Photography Backdrop ── */}
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-navy py-20 md:py-28 lg:py-32">
+        {/* Background photo */}
+        <Image
+          src="/images/teaching-and-learning/home-education-seminar-4x3.jpg"
+          alt="MindGame Africa — Education and professional development seminar and structured learning"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center select-none pointer-events-none opacity-40"
+        />
+
+        {/* Navy gradient scrim overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/88 to-navy/55 pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* Soft bottom dissolve into cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-cream via-cream/30 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[80rem] w-full px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,8 +158,8 @@ export default function EducationPage() {
             </motion.div>
           </div>
 
-          {/* 7 Audience Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          {/* Audience Groups — Refined Editorial Presentation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
             {whoWeServe.audiences.map((item, idx) => (
               <motion.article
                 key={idx}
@@ -147,28 +171,16 @@ export default function EducationPage() {
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className={`rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300 flex flex-col justify-between ${
-                  idx === 6 ? "sm:col-span-2 lg:col-span-1" : ""
+                className={`rounded-xl bg-navy-soft p-6 md:p-7 border border-white/10 hover:border-gold/30 transition-all duration-300 flex items-start gap-4 ${
+                  idx === 6 ? "md:col-span-2 md:max-w-[720px]" : ""
                 }`}
               >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
-                      AUDIENCE {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/40 uppercase tracking-wider">
-                      Target Learner
-                    </span>
-                  </div>
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg font-bold tracking-tight">
-                    {item}
-                  </h3>
-                </div>
-                <div className="pt-4 mt-5 border-t border-white/10">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/45 uppercase tracking-wide">
-                    Professional Development Scope
-                  </span>
-                </div>
+                <span className="font-[family-name:var(--font-inter)] text-xs font-bold text-gold shrink-0 mt-0.5 px-2.5 py-1 rounded bg-gold/10 border border-gold/20">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg sm:text-xl font-medium leading-snug">
+                  {item}
+                </h3>
               </motion.article>
             ))}
           </div>
@@ -220,7 +232,7 @@ export default function EducationPage() {
             </motion.div>
           </div>
 
-          {/* 8 Learning Experience Items Grid */}
+          {/* 8 Learning Experience Features — Refined Clean Feature Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {learningExperience.features.map((item, idx) => (
               <motion.article
@@ -233,21 +245,14 @@ export default function EducationPage() {
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="flex flex-col justify-between rounded-xl bg-white p-6 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300"
+                className="rounded-xl bg-white p-6 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300 flex flex-col justify-start"
               >
-                <div>
-                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-green tracking-wider uppercase">
-                    STANDARD {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <p className="mt-3 text-navy/85 text-[0.9375rem] font-medium leading-relaxed">
-                    {item}
-                  </p>
-                </div>
-                <div className="pt-4 mt-4 border-t border-navy/[0.06]">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/45 uppercase tracking-wide">
-                    {idx === 7 ? "Statutory Boundary" : "Design Criterion"}
-                  </span>
-                </div>
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green/10 text-green font-[family-name:var(--font-inter)] text-xs font-bold mb-4">
+                  {idx + 1}
+                </span>
+                <p className="text-navy/85 text-[0.9375rem] font-medium leading-relaxed">
+                  {item}
+                </p>
               </motion.article>
             ))}
           </div>
@@ -317,11 +322,6 @@ export default function EducationPage() {
                     {area.description}
                   </p>
                 </div>
-                <div className="pt-4 mt-5 border-t border-white/10">
-                  <span className="font-[family-name:var(--font-inter)] text-[0.6875rem] text-cream/45 uppercase tracking-wide">
-                    Future Offering · In Development
-                  </span>
-                </div>
               </motion.article>
             ))}
           </div>
@@ -343,12 +343,9 @@ export default function EducationPage() {
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="rounded-2xl border border-navy/15 bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(16,35,63,0.05)] mb-14"
             >
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-navy/[0.08]">
+              <div className="pb-4 mb-4 border-b border-navy/[0.08]">
                 <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
-                  Portfolio Development Notice (§9.7b)
-                </span>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
-                  Main Catalogue State
+                  Programme Portfolio Notice
                 </span>
               </div>
               <p className="text-navy/85 text-lg md:text-xl font-[family-name:var(--font-fraunces)] leading-relaxed">

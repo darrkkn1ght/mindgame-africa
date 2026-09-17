@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionEyebrow } from "@/components/ui/SectionEyebrow";
 import { MailingSignup } from "@/components/sections/MailingSignup";
@@ -20,9 +21,32 @@ export default function InsightsPage() {
 
   return (
     <>
-      {/* ── 1. Hero (§11.1) ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+      {/* ── 1. Hero with Atmospheric Photography Backdrop ── */}
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-navy py-20 md:py-28 lg:py-32">
+        {/* Background photo */}
+        <Image
+          src="/images/observation-and-analysis/practice-analytical-review-16x9.jpg"
+          alt="MindGame Africa — Performance analysis, literature translation and scientific insights"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center select-none pointer-events-none opacity-40"
+        />
+
+        {/* Navy gradient scrim overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/88 to-navy/55 pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* Soft bottom dissolve into cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-cream via-cream/30 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[80rem] w-full px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,12 +195,9 @@ export default function InsightsPage() {
 
               {/* Exact §11.3 Status String in Dedicated Institutional Box */}
               <div className="mt-8 rounded-2xl border border-white/15 bg-navy-soft p-8 md:p-9 shadow-[0_4px_24px_rgba(16,35,63,0.2)]">
-                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                <div className="pb-4 mb-4 border-b border-white/10">
                   <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-gold">
-                    Repository Development Notice (§11.3)
-                  </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-white/10 text-cream/70">
-                    Pre-publication
+                    Knowledge Library Development
                   </span>
                 </div>
                 <p className="text-cream text-lg md:text-xl font-[family-name:var(--font-fraunces)] leading-relaxed">

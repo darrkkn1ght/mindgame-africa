@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -14,9 +15,32 @@ export default function ResearchPage() {
 
   return (
     <>
-      {/* ── 1. Hero (§8.1) ── */}
-      <section className="relative bg-navy py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
+      {/* ── 1. Hero with Atmospheric Photography Backdrop ── */}
+      <section className="relative min-h-[50vh] lg:min-h-[55vh] flex items-center overflow-hidden bg-navy py-20 md:py-28 lg:py-32">
+        {/* Background photo */}
+        <Image
+          src="/images/researchers-at-work/home-research-context-16x9.jpg"
+          alt="MindGame Africa — African sports campus research context at dusk"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-center select-none pointer-events-none opacity-40"
+        />
+
+        {/* Navy gradient scrim overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/88 to-navy/55 pointer-events-none"
+          aria-hidden="true"
+        />
+
+        {/* Soft bottom dissolve into cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-cream via-cream/30 to-transparent pointer-events-none"
+          aria-hidden="true"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[80rem] w-full px-5 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -161,25 +185,12 @@ export default function ResearchPage() {
                 className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-6 md:p-7 border border-white/10 hover:border-gold/30 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
-                      THEME {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/40 uppercase tracking-wider">
-                      DEVELOPING SCOPE
-                    </span>
-                  </div>
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase block mb-3">
+                    Theme {String(idx + 1).padStart(2, "0")}
+                  </span>
                   <p className="font-[family-name:var(--font-fraunces)] text-cream text-lg sm:text-xl font-medium leading-snug">
                     {theme}
                   </p>
-                </div>
-                <div className="pt-4 mt-5 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/45 uppercase tracking-wide">
-                    Institutional Agenda
-                  </span>
-                  <span className="text-xs text-gold/80 font-[family-name:var(--font-inter)]">
-                    Active Theme
-                  </span>
                 </div>
               </motion.article>
             ))}
