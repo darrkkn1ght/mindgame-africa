@@ -14,7 +14,7 @@ Comprehensive audit of all image placeholders, Next.js image component calls, an
 | 2 | `/` (Homepage) | Current Focus (§3.4), right column | `<SectionImage>` in `components/sections/CurrentFocus.tsx:93` | **PLACEHOLDER** | 4:3 | Abstract minimalist performance data visualization showing biometric trends and cognitive response latency on deep navy | `/images/performance-data/home-focus-metrics-4x3.jpg` |
 | 3 | `/` (Homepage) | Research Preview (§3.5), right column | `<SectionImage>` in `components/sections/ResearchPreview.tsx:50` | **PLACEHOLDER** | 16:9 | Wide environmental landscape photograph of an African university sports campus running track at dusk with natural mountain horizon | `/images/researchers-at-work/home-research-context-16x9.jpg` |
 | 4 | `/` (Homepage) | Education Preview (§3.5), left column | `<SectionImage>` in `components/sections/EducationPreview.tsx:24` | **SOURCED** | 4:3 | Practitioners and coaches engaged in structured case discussion, reflection, and applied learning | `/images/teaching-and-learning/home-education-seminar-4x3.jpg` |
-| 5 | `/` (Homepage) | People Preview (§3.5 / §12.3), right card column | `<SectionImage>` in `components/sections/PeoplePreview.tsx:71` | **SOURCED** | 4:3 | Natural working portrait of Dr. Joshua A. Oparachukwu examining applied performance frameworks | `/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg` |
+| 5 | `/` (Homepage) | People Preview (§3.5 / §12.3), right card column | `<SectionImage>` in `components/sections/PeoplePreview.tsx:71` | **SOURCED** | 1:1 | Professional portrait of Dr. Joshua A. Oparachukwu, Founder of MindGame Africa | `/images/practitioner-interaction/oparachukwu.jpeg` |
 | 6 | `/about` | Core About (§4.2), right column | `<SectionImage>` in `app/(marketing)/about/page.tsx:109` | **SOURCED** | 4:3 | Performance practitioners examining athlete cognitive and behavioural factors in a professional setting | `/images/multidisciplinary-collaboration/about-core-practice-4x3.jpg` |
 | 7 | `/about` | Why Africa (§4.5), left column | `<SectionImage>` in `app/(marketing)/about/page.tsx:152` | **SOURCED** | 4:3 | Coach and athletes reviewing tactical movement and environmental demands during regional tournament preparation | `/images/training-and-competition/about-why-africa-context-4x3.jpg` |
 | 8 | `/about` | What We Are Building (§4.7), right column | `<SectionImage>` in `app/(marketing)/about/page.tsx:269` | **MISSING** | 4:3 | Researchers, specialists and educators in collaborative consultation regarding institutional capability development | *(pending future commissioned shot)* |
@@ -36,8 +36,8 @@ Comprehensive audit of all image placeholders, Next.js image component calls, an
 | 24 | `/insights` | Core Content Architecture (§11.2), right column | `<SectionImage>` in `app/(marketing)/insights/page.tsx:82` | **PLACEHOLDER** | 4:3 | Minimalist abstract vector composition representing analytical literature review and evidence classification on warm cream | `/images/performance-data/insights-translation-grid-4x3.jpg` |
 | 25 | `/insights` | Knowledge Library Status (§11.3), right column | `<SectionImage>` in `app/(marketing)/insights/page.tsx:197` | **SOURCED** | 4:3 | MindGame Africa Insights — Field notes, match analysis, and practitioner perspectives. | `/images/researchers-at-work/insights-literature-review-4x3.jpg` |
 | 26 | `/insights` | Mailing List & Frameworks (§11.4), right column | `<SectionImage>` in `app/(marketing)/insights/page.tsx:240` | **SOURCED** | 4:3 | MindGame Africa Insights — Performance frameworks and evidence-based summaries for practitioners. | `/images/practitioner-interaction/insights-practitioner-discussion-4x3.jpg` |
-| 27 | `/people` | Leadership Founder Profile (§12.2), left grid col | `<SectionImage>` in `app/(marketing)/people/page.tsx:79` | **SOURCED** | 4:3 | Dr. Joshua A. Oparachukwu, Founder of MindGame Africa | `/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg` |
-| 28 | `/people/[slug]` | Founder Profile Header & Bio (§12.2), left col | `<SectionImage>` in `app/(marketing)/people/[slug]/page.tsx:55` | **SOURCED** | 4:3 | Dr. Joshua A. Oparachukwu, Founder of MindGame Africa | `/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg` |
+| 27 | `/people` | Leadership Founder Profile (§12.2), left grid col | `<SectionImage>` in `app/(marketing)/people/page.tsx:79` | **SOURCED** | 1:1 | Dr. Joshua A. Oparachukwu, Founder of MindGame Africa | `/images/practitioner-interaction/oparachukwu.jpeg` |
+| 28 | `/people/[slug]` | Founder Profile Header & Bio (§12.2), left col | `<SectionImage>` in `app/(marketing)/people/[slug]/page.tsx:55` | **SOURCED** | 1:1 | Dr. Joshua A. Oparachukwu, Founder of MindGame Africa | `/images/practitioner-interaction/oparachukwu.jpeg` |
 | 29 | `/opportunities` | Practitioner Function (§10), right column | `<SectionImage>` in `app/(marketing)/opportunities/page.tsx:71` | **SOURCED** | 4:3 | MindGame Africa Opportunities — Practitioner mentoring and supervised experience in African performance environments. | `/images/practitioner-interaction/opportunities-mentoring-4x3.jpg` |
 | 30 | `/opportunities` | Future Interest Registration (§10), left col | `<SectionImage>` in `app/(marketing)/opportunities/page.tsx:164` | **SOURCED** | 16:9 | MindGame Africa Opportunities — Early career practitioners observing performance analysis in elite competition. | `/images/observation-and-analysis/opportunities-field-observation-16x9.jpg` |
 | 31 | `/partner-with-us` | Partnership Routes (§13.2), institutional card band | `<SectionImage>` in `app/(marketing)/partner-with-us/page.tsx:64` | **SOURCED** | 16:9 | Institutional and academic partners discussing strategic performance initiatives across Africa | `/images/multidisciplinary-collaboration/partner-institutional-meeting-16x9.jpg` |
@@ -87,13 +87,13 @@ Sourcing brief: Adult African sports practitioners and coaches reviewing perform
 Status: SOURCED (`/images/teaching-and-learning/home-education-seminar-4x3.jpg`)
 
 [5] HOMEPAGE / PEOPLE PREVIEW / RIGHT CARD COLUMN
-Required: 4:3
-Alt text: Natural working portrait of Dr. Joshua A. Oparachukwu examining applied performance frameworks
+Required: 1:1
+Alt text: Professional portrait of Dr. Joshua A. Oparachukwu, Founder of MindGame Africa
 Subject category: practitioner-interaction
 Shot type: portrait
 Priority: lazy
-Sourcing brief: Natural unposed working portrait of founder Dr. Joshua A. Oparachukwu in thoughtful engagement reviewing applied performance frameworks in an African institutional setting.
-Status: SOURCED (`/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg`)
+Sourcing brief: High-resolution professional studio portrait of founder Dr. Joshua A. Oparachukwu.
+Status: SOURCED (`/images/practitioner-interaction/oparachukwu.jpeg`)
 
 [6] ABOUT / CORE ABOUT / RIGHT COLUMN
 Required: 4:3
@@ -290,17 +290,17 @@ Alt text: Dr. Joshua A. Oparachukwu, Founder of MindGame Africa
 Subject category: practitioner-interaction
 Shot type: portrait
 Priority: lazy
-Sourcing brief: High-resolution formal executive portrait of founder Dr. Joshua A. Oparachukwu in authentic professional attire for the institutional leadership profile.
-Status: SOURCED (`/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg`)
+Sourcing brief: High-resolution formal professional portrait of founder Dr. Joshua A. Oparachukwu for the institutional leadership profile.
+Status: SOURCED (`/images/practitioner-interaction/oparachukwu.jpeg`)
 
 [28] PEOPLE [SLUG] / FOUNDER PROFILE HEADER & BIO / LEFT COLUMN
-Required: 4:3
+Required: 1:1
 Alt text: Dr. Joshua A. Oparachukwu, Founder of MindGame Africa
 Subject category: practitioner-interaction
 Shot type: portrait
 Priority: lazy
-Sourcing brief: High-resolution formal executive portrait of founder Dr. Joshua A. Oparachukwu in authentic professional attire for the dedicated biography detail page.
-Status: SOURCED (`/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg`)
+Sourcing brief: High-resolution formal professional portrait of founder Dr. Joshua A. Oparachukwu for the dedicated biography detail page.
+Status: SOURCED (`/images/practitioner-interaction/oparachukwu.jpeg`)
 
 [29] OPPORTUNITIES / PRACTITIONER FUNCTION / RIGHT COLUMN
 Required: 4:3

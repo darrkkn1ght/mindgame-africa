@@ -69,10 +69,10 @@ export function PeoplePreview() {
             className="lg:col-span-5 flex"
           >
             <SectionImage
-              src="/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg"
+              src="/images/practitioner-interaction/oparachukwu.jpeg"
               name="LEADERSHIP & APPLIED PRACTICE"
-              alt="Natural working portrait of Dr. Joshua A. Oparachukwu examining applied performance frameworks"
-              aspectRatio="4/3"
+              alt="Portrait of Dr. Joshua A. Oparachukwu, Founder of MindGame Africa"
+              aspectRatio="1/1"
               subject="INSTITUTIONAL LEADERSHIP"
               variant="cream"
               className="h-full"

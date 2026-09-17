@@ -53,11 +53,11 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
             {/* Portrait Slot */}
             <div className="lg:col-span-4">
               <SectionImage
-                src="/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg"
+                src="/images/practitioner-interaction/oparachukwu.jpeg"
                 name="Dr. Joshua A. Oparachukwu"
                 subject="Founder & Intellectual Lead"
                 alt="Dr. Joshua A. Oparachukwu, Founder of MindGame Africa"
-                aspectRatio="4/3"
+                aspectRatio="1/1"
                 variant="navy"
                 className="shadow-xl"
               />
