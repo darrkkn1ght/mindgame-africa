@@ -77,24 +77,24 @@ export default function PeoplePage() {
                 {/* Professional Portrait Slot */}
                 <div className="md:col-span-5">
                   <SectionImage
+                    src="/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg"
                     name="Dr. Joshua A. Oparachukwu"
                     subject="Founder & Intellectual Lead"
                     alt="Dr. Joshua A. Oparachukwu, Founder of MindGame Africa"
                     aspectRatio="4/3"
                     variant="cream"
-                    caption="FOUNDER PORTRAIT // §12.2"
                   />
                 </div>
 
                 {/* Name, Designation & Short Profile */}
                 <div className="md:col-span-7">
                   <div className="flex items-center justify-between gap-3 mb-3">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                       {founderProfile.role}
                     </span>
                     <Link
                       href="/people/dr-joshua-a-oparachukwu"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-navy/60 hover:text-navy font-[family-name:var(--font-jetbrains-mono)] uppercase"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-navy/60 hover:text-navy font-[family-name:var(--font-inter)] uppercase"
                     >
                       <span>Full Profile</span>
                       <ArrowUpRight size={13} />
@@ -104,7 +104,7 @@ export default function PeoplePage() {
                   <h3 className="font-[family-name:var(--font-fraunces)] text-2xl sm:text-3xl font-bold tracking-tight text-navy mb-2">
                     {founderProfile.name}
                   </h3>
-                  <p className="font-[family-name:var(--font-jetbrains-mono)] text-gold text-xs sm:text-sm font-semibold tracking-wide mb-4">
+                  <p className="font-[family-name:var(--font-inter)] text-gold text-xs sm:text-sm font-semibold tracking-wide mb-4">
                     {founderProfile.designation}
                   </p>
                   <p className="text-navy/80 text-[0.9375rem] md:text-base leading-relaxed">
@@ -115,7 +115,7 @@ export default function PeoplePage() {
 
               {/* Full Bio Paragraphs — First 2 visible, remainder in crawlable expander */}
               <div>
-                <h4 className="text-xs uppercase font-semibold font-[family-name:var(--font-jetbrains-mono)] text-navy/50 tracking-wider mb-4">
+                <h4 className="text-xs uppercase font-semibold font-[family-name:var(--font-inter)] text-navy/50 tracking-wider mb-4">
                   Professional Biography
                 </h4>
                 <div className="space-y-4 text-navy/80 text-base md:text-[1.0625rem] leading-[1.7]">
@@ -143,7 +143,7 @@ export default function PeoplePage() {
                     onClick={() => setIsBioExpanded(!isBioExpanded)}
                     aria-expanded={isBioExpanded}
                     aria-controls="people-remaining-bio"
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy hover:text-gold transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy hover:text-gold transition-colors"
                   >
                     <span>{isBioExpanded ? "Show Less" : "Read Full Profile"}</span>
                     {isBioExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -157,7 +157,7 @@ export default function PeoplePage() {
                   <p className="font-[family-name:var(--font-fraunces)] text-navy text-lg md:text-xl leading-relaxed italic">
                     &ldquo;{founderProfile.leadershipStatement}&rdquo;
                   </p>
-                  <footer className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-wider text-navy/60">
+                  <footer className="mt-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-wider text-navy/60">
                     — {founderProfile.name}, Founder
                   </footer>
                 </blockquote>
@@ -165,7 +165,7 @@ export default function PeoplePage() {
 
               {/* Verified Credential Facts Only */}
               <div className="mt-8 pt-6 border-t border-navy/[0.08]">
-                <span className="text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/50 block mb-3">
+                <span className="text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/50 block mb-3">
                   Academic Background
                 </span>
                 <ul className="space-y-2 text-sm md:text-[0.9375rem]">
@@ -200,7 +200,7 @@ export default function PeoplePage() {
                     key={idx}
                     className="flex items-start gap-3.5 p-4 rounded-lg bg-white border border-navy/[0.06] shadow-[0_1px_4px_rgba(16,35,63,0.03)]"
                   >
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold shrink-0 mt-0.5">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold shrink-0 mt-0.5">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span className="text-navy/80 text-sm md:text-[0.9375rem] leading-snug">

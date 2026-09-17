@@ -39,18 +39,18 @@ export default function PrivacyPage() {
           <h1 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
             Privacy Policy
           </h1>
-          <p className="mt-4 text-navy/60 font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-wider">
-            Effective Date: 16 September 2026 · Pending Jurisdiction-Specific Legal Review (§24)
+          <p className="mt-4 text-navy/60 font-[family-name:var(--font-inter)] text-xs uppercase tracking-wider">
+            Effective Date: 16 September 2026
           </p>
         </header>
 
         {/* Regulatory Flag Banner */}
         <div className="rounded-xl border border-navy/15 bg-white p-6 md:p-8 mb-12 shadow-sm">
-          <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green block mb-2">
+          <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green block mb-2">
             Legal Notice & Advisory
           </span>
           <p className="text-navy/80 text-sm md:text-[0.9375rem] leading-relaxed">
-            This Privacy Policy sets out how MindGame Africa processes information submitted across this platform. In accordance with §24 of the Original Brief, this document is an operational policy draft reflecting current data workflows and must undergo formal jurisdiction-specific legal review prior to commercial deployment.
+            This Privacy Policy sets out how MindGame Africa processes information submitted across this platform. This document outlines our data workflows, confidentiality commitments, and procedural safeguards.
           </p>
         </div>
 
@@ -61,23 +61,23 @@ export default function PrivacyPage() {
               1. Information We Collect
             </h2>
             <p className="mb-4">
-              MindGame Africa collects personal information solely when voluntarily provided through one of our five web inquiry and engagement forms:
+              MindGame Africa collects personal information solely when voluntarily provided through one of our web inquiry and engagement forms:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-navy/80 text-[0.9375rem]">
               <li>
                 <strong>General Contact Form:</strong> Full Name, Email Address, Subject, Message, and optional Organisation, Inquiry Type, or Preferred Contact Method.
               </li>
               <li>
-                <strong>Performance & Collaboration Inquiry Form (§14.1):</strong> Full Name, Email Address, Organisation, Role, Country, Nature of Inquiry, Target Population, Estimated Timeline, and contextual notes.
+                <strong>Performance & Collaboration Inquiry Form:</strong> Full Name, Email Address, Organisation, Role, Country, Nature of Inquiry, Target Population, Estimated Timeline, and contextual notes.
               </li>
               <li>
-                <strong>Partner With Us Form (§13.3):</strong> Full Name, Organisation, Role, Email Address, Country, Type of Collaboration (selected from our seven collaboration tracks), Brief Project Description, Desired Outcomes, and Preferred Next Steps.
+                <strong>Partner With Us Form:</strong> Full Name, Organisation, Role, Email Address, Country, Type of Collaboration (selected from our seven collaboration tracks), Brief Project Description, Desired Outcomes, and Preferred Next Steps.
               </li>
               <li>
-                <strong>Practitioner Opportunity Interest Form (§10):</strong> Full Name, Email Address, optional Professional Role or Academic Background, and Area of Interest.
+                <strong>Practitioner Opportunity Interest Form:</strong> Full Name, Email Address, optional Professional Role or Academic Background, and Area of Interest.
               </li>
               <li>
-                <strong>Knowledge & Insights Mailing List (§11.4):</strong> Full Name, Email Address, and optional Topical Interest Areas.
+                <strong>Knowledge & Insights Mailing List:</strong> Full Name, Email Address, and optional Topical Interest Areas.
               </li>
             </ul>
             <p className="mt-4 text-sm font-semibold text-navy/75 border-l-2 border-gold pl-4 py-1">
@@ -119,7 +119,7 @@ export default function PrivacyPage() {
               4. Data Retention
             </h2>
             <p>
-              Correspondence and inquiry records are retained only for as long as necessary to fulfill the operational purpose for which they were gathered, facilitate active professional discussions, or comply with applicable legal obligations. Newsletter subscriptions remain active until you request removal.
+              Correspondence and inquiry records are retained only for as long as necessary to fulfil the operational purpose for which they were gathered, facilitate active professional discussions, or comply with applicable legal obligations. Newsletter subscriptions remain active until you request removal.
             </p>
           </section>
 
@@ -136,9 +136,6 @@ export default function PrivacyPage() {
               </p>
               <p className="text-navy/70">
                 Data privacy and deletion inquiries may be directed through the General Contact form on this website using the subject &ldquo;Data Subject Rights Request&rdquo;.
-              </p>
-              <p className="text-xs text-navy/50 italic pt-2 border-t border-navy/10">
-                [DATA CONTROLLER CONTACT GAP: Formal registered legal entity name, corporate registration number, and designated Data Protection Officer email to be inserted upon confirmation of corporate structuring and jurisdiction-specific legal review per §24 of the Original Brief. Per Amendment A1, no physical location is published.]
               </p>
             </div>
           </section>

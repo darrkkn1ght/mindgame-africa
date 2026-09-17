@@ -154,7 +154,7 @@ export function MailingSignup({
             <button
               type="button"
               onClick={handleReset}
-              className={`text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] underline underline-offset-4 hover:text-gold transition-colors ${
+              className={`text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] underline underline-offset-4 hover:text-gold transition-colors ${
                 variant === "navy" ? "text-cream/70" : "text-navy/70"
               }`}
             >
@@ -174,7 +174,7 @@ export function MailingSignup({
           <div>
             <label
               htmlFor="mailing-name"
-              className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 font-[family-name:var(--font-jetbrains-mono)] ${
+              className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 font-[family-name:var(--font-inter)] ${
                 variant === "navy" ? "text-cream/90" : "text-navy/90"
               }`}
             >
@@ -202,7 +202,7 @@ export function MailingSignup({
           <div>
             <label
               htmlFor="mailing-email"
-              className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 font-[family-name:var(--font-jetbrains-mono)] ${
+              className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 font-[family-name:var(--font-inter)] ${
                 variant === "navy" ? "text-cream/90" : "text-navy/90"
               }`}
             >
@@ -232,7 +232,7 @@ export function MailingSignup({
         <div>
           <label
             htmlFor="mailing-interest"
-            className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 font-[family-name:var(--font-jetbrains-mono)] ${
+            className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 font-[family-name:var(--font-inter)] ${
               variant === "navy" ? "text-cream/70" : "text-navy/70"
             }`}
           >

@@ -20,7 +20,7 @@ export function SectionEyebrow({
 
   return (
     <div
-      className={`flex items-center gap-2.5 font-[family-name:var(--font-jetbrains-mono)] text-[0.8125rem] font-semibold uppercase tracking-[0.12em] ${textColor} ${className}`}
+      className={`flex items-center gap-2.5 font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-[0.14em] ${textColor} ${className}`}
     >
       {number && (
         <span

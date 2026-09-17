@@ -97,7 +97,7 @@ export function FullInquiryForm() {
       const payload = {
         ...formData,
         fileName: file ? file.name : "None",
-        formType: "Performance / Collaboration Full Inquiry (§14.1)",
+        formType: "Performance / Collaboration Full Inquiry",
       };
 
       const res = await fetch(endpoint, {
@@ -146,8 +146,8 @@ export function FullInquiryForm() {
       className="rounded-xl bg-white p-7 md:p-10 border border-navy/[0.08] shadow-[0_4px_24px_rgba(16,35,63,0.06)] max-w-[840px] mx-auto text-left"
     >
       <div className="border-b border-navy/[0.08] pb-6 mb-8">
-        <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
-          Detailed Intake Flow (§14.1)
+        <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
+          Detailed Intake Flow
         </span>
         <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-2xl sm:text-3xl font-bold mt-1">
           Performance & Collaboration Inquiry
@@ -167,7 +167,7 @@ export function FullInquiryForm() {
         {/* Row 1: Name & Role, Organisation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Name and Role <span className="text-red-500">*</span>
             </label>
             <input
@@ -181,7 +181,7 @@ export function FullInquiryForm() {
             )}
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Organisation / Team / Institution
             </label>
             <input
@@ -196,7 +196,7 @@ export function FullInquiryForm() {
         {/* Row 2: Email, Telephone, Country */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Email Address <span className="text-red-500">*</span>
             </label>
             <input
@@ -210,7 +210,7 @@ export function FullInquiryForm() {
             )}
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Telephone (Optional)
             </label>
             <input
@@ -221,7 +221,7 @@ export function FullInquiryForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Country <span className="text-red-500">*</span>
             </label>
             <input
@@ -239,7 +239,7 @@ export function FullInquiryForm() {
         {/* Inquiry Category & Who the work concerns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Inquiry Category
             </label>
             <select
@@ -255,7 +255,7 @@ export function FullInquiryForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Who the Work Concerns
             </label>
             <select
@@ -275,7 +275,7 @@ export function FullInquiryForm() {
 
         {/* Brief description */}
         <div>
-          <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
             Brief Description of Performance Problem, Research Question, or Learning Need <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -292,7 +292,7 @@ export function FullInquiryForm() {
         {/* What has been tried & Desired outcome */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               What Has Already Been Tried (If relevant)
             </label>
             <textarea
@@ -303,7 +303,7 @@ export function FullInquiryForm() {
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Desired Outcome
             </label>
             <textarea
@@ -318,7 +318,7 @@ export function FullInquiryForm() {
         {/* Timeline & Delivery format */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Indicative Timeline
             </label>
             <select
@@ -333,7 +333,7 @@ export function FullInquiryForm() {
             </select>
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Preferred Delivery Format
             </label>
             <select
@@ -352,7 +352,7 @@ export function FullInquiryForm() {
         {/* Document Upload & Referral */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               Attach Scoping Brief / Document (PDF, max 10MB)
             </label>
             <div className="relative border border-dashed border-navy/30 rounded-lg p-4 bg-navy/[0.02] text-center">
@@ -385,7 +385,7 @@ export function FullInquiryForm() {
             </div>
           </div>
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 mb-2">
               How Did You Hear About MindGame Africa?
             </label>
             <input

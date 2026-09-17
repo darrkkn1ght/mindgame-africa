@@ -179,7 +179,7 @@ export function PartnerForm() {
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
+                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
               >
                 Send another inquiry
               </button>
@@ -204,7 +204,7 @@ export function PartnerForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {partnerContent.form.labels.fullName}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -233,7 +233,7 @@ export function PartnerForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               {partnerContent.form.labels.organisation}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </label>
@@ -260,7 +260,7 @@ export function PartnerForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               {partnerContent.form.labels.role}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </label>
@@ -290,7 +290,7 @@ export function PartnerForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               {partnerContent.form.labels.email}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </label>
@@ -317,7 +317,7 @@ export function PartnerForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               {partnerContent.form.labels.country}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </label>
@@ -346,7 +346,7 @@ export function PartnerForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {partnerContent.form.labels.collaborationType}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -384,7 +384,7 @@ export function PartnerForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {partnerContent.form.labels.discussionTopic}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -412,7 +412,7 @@ export function PartnerForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {partnerContent.form.labels.usefulOutcome}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -440,7 +440,7 @@ export function PartnerForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {partnerContent.form.labels.preferredContact}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -476,7 +476,7 @@ export function PartnerForm() {
             />
             <span className="text-sm text-navy/80 leading-snug">
               {partnerContent.form.labels.consent}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </span>

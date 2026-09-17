@@ -77,12 +77,12 @@ export default function EducationPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/teaching-and-learning/education-seminar-interactive-4x3.jpg"
                 name="Professional Learning"
                 subject="Applied Teaching & Discussion"
                 alt="MindGame Africa Education — Interactive professional learning, case discussion, and seminar engagement."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="PEDAGOGICAL ENGAGEMENT // §17.1"
               />
             </motion.div>
           </div>
@@ -124,12 +124,12 @@ export default function EducationPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/coaching-environments/education-coach-practice-16x9.jpg"
                 name="Coach Development"
                 subject="Coaching Environment Review"
                 alt="MindGame Africa Education — Coach education, observation, and applied practice review in sporting settings."
                 aspectRatio="16/9"
                 variant="navy"
-                caption="COACHING REALITIES // §17.1"
               />
             </motion.div>
           </div>
@@ -153,10 +153,10 @@ export default function EducationPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider uppercase">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
                       AUDIENCE {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/40 uppercase tracking-wider">
+                    <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/40 uppercase tracking-wider">
                       Target Learner
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export default function EducationPage() {
                   </h3>
                 </div>
                 <div className="pt-4 mt-5 border-t border-white/10">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/45 uppercase tracking-wide">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/45 uppercase tracking-wide">
                     Professional Development Scope
                   </span>
                 </div>
@@ -210,12 +210,12 @@ export default function EducationPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/team-sessions/education-workshop-collaboration-16x9.jpg"
                 name="Practitioner Workshops"
                 subject="Applied Methods & Case Review"
                 alt="MindGame Africa Education — Structured practitioner development workshop, method review, and applied tools."
-                aspectRatio="4/3"
+                aspectRatio="16/9"
                 variant="cream"
-                caption="PRACTITIONER STANDARDS // §17.1"
               />
             </motion.div>
           </div>
@@ -236,7 +236,7 @@ export default function EducationPage() {
                 className="flex flex-col justify-between rounded-xl bg-white p-6 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300"
               >
                 <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-green tracking-wider uppercase">
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-green tracking-wider uppercase">
                     STANDARD {String(idx + 1).padStart(2, "0")}
                   </span>
                   <p className="mt-3 text-navy/85 text-[0.9375rem] font-medium leading-relaxed">
@@ -244,7 +244,7 @@ export default function EducationPage() {
                   </p>
                 </div>
                 <div className="pt-4 mt-4 border-t border-navy/[0.06]">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-navy/45 uppercase tracking-wide">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/45 uppercase tracking-wide">
                     {idx === 7 ? "Statutory Boundary" : "Design Criterion"}
                   </span>
                 </div>
@@ -282,7 +282,7 @@ export default function EducationPage() {
                 {developingProgrammeAreas.subheading}
               </p>
             </motion.div>
-            <span className="inline-flex items-center px-3 py-1 rounded text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy-soft text-cream/75 border border-white/10 shrink-0">
+            <span className="inline-flex items-center px-3 py-1 rounded text-xs font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy-soft text-cream/75 border border-white/10 shrink-0">
               Not Open for Registration
             </span>
           </div>
@@ -303,10 +303,10 @@ export default function EducationPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold">
                       AREA {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-white/10 text-cream/80 border border-white/10">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-white/10 text-cream/80 border border-white/10">
                       In Development
                     </span>
                   </div>
@@ -318,8 +318,8 @@ export default function EducationPage() {
                   </p>
                 </div>
                 <div className="pt-4 mt-5 border-t border-white/10">
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-[0.6875rem] text-cream/45 uppercase tracking-wide">
-                    Future Offering // Non-active
+                  <span className="font-[family-name:var(--font-inter)] text-[0.6875rem] text-cream/45 uppercase tracking-wide">
+                    Future Offering · In Development
                   </span>
                 </div>
               </motion.article>
@@ -344,10 +344,10 @@ export default function EducationPage() {
               className="rounded-2xl border border-navy/15 bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(16,35,63,0.05)] mb-14"
             >
               <div className="flex items-center justify-between pb-4 mb-4 border-b border-navy/[0.08]">
-                <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                   Portfolio Development Notice (§9.7b)
                 </span>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
                   Main Catalogue State
                 </span>
               </div>

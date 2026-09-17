@@ -72,12 +72,12 @@ export default function ResearchPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/researchers-at-work/research-mandate-investigation-4x3.jpg"
                 name="Scientific Inquiry"
                 subject="Field-Based Performance Research"
                 alt="MindGame Africa Research — Contextual investigation and performance science in African sport environments."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="RESEARCH MANDATE // §17.1"
               />
             </motion.div>
           </div>
@@ -110,9 +110,6 @@ export default function ResearchPage() {
                 {themes.subheading}
               </p>
             </motion.div>
-            <span className="inline-flex items-center px-3 py-1 rounded text-xs font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-medium bg-gold/15 text-gold border border-gold/30 shrink-0">
-              Active Inquiries & Developing Themes
-            </span>
           </div>
 
           {/* Performance Science pillar callout */}
@@ -128,7 +125,7 @@ export default function ResearchPage() {
               className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 rounded-xl bg-navy-soft p-7 md:p-8 max-w-[920px] transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_20px_rgba(16,35,63,0.14)] hover:shadow-[0_20px_38px_-10px_rgba(16,35,63,0.38)] border border-white/10"
             >
               <div>
-                <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold tracking-wider text-gold uppercase">
+                <span className="font-[family-name:var(--font-inter)] text-xs font-semibold tracking-wider text-gold uppercase">
                   Connected Scientific Pillar
                 </span>
                 <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-xl sm:text-2xl font-bold tracking-tight mt-2">
@@ -138,7 +135,7 @@ export default function ResearchPage() {
                   Explore how multidisciplinary science connects psychological, behavioural, physiological, and contextual perspectives.
                 </p>
               </div>
-              <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider font-[family-name:var(--font-jetbrains-mono)] uppercase text-gold shrink-0">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider font-[family-name:var(--font-inter)] uppercase text-gold shrink-0">
                 <span>View Performance Science</span>
                 <ArrowUpRight
                   size={18}
@@ -165,10 +162,10 @@ export default function ResearchPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider uppercase">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
                       THEME {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/40 uppercase tracking-wider">
+                    <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/40 uppercase tracking-wider">
                       DEVELOPING SCOPE
                     </span>
                   </div>
@@ -177,10 +174,10 @@ export default function ResearchPage() {
                   </p>
                 </div>
                 <div className="pt-4 mt-5 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/45 uppercase tracking-wide">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/45 uppercase tracking-wide">
                     Institutional Agenda
                   </span>
-                  <span className="text-xs text-gold/80 font-[family-name:var(--font-jetbrains-mono)]">
+                  <span className="text-xs text-gold/80 font-[family-name:var(--font-inter)]">
                     Active Theme
                   </span>
                 </div>
@@ -225,12 +222,12 @@ export default function ResearchPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/multidisciplinary-collaboration/research-symposium-4x3.jpg"
                 name="Academic Collaboration"
                 subject="University & Faculty Partnerships"
                 alt="MindGame Africa Research — Academic collaboration, research symposia, and university partnerships."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="RESEARCH COLLABORATION // §17.1"
               />
             </motion.div>
           </div>
@@ -252,11 +249,11 @@ export default function ResearchPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-2xl font-bold text-green">
+                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-green">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     {idx < 5 && (
-                      <span className="hidden lg:block text-navy/25 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+                      <span className="hidden lg:block text-navy/25 text-xs font-[family-name:var(--font-inter)]">
                         &rarr;
                       </span>
                     )}
@@ -306,12 +303,12 @@ export default function ResearchPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/performance-data/research-data-collection-4x3.jpg"
                 name="Applied Data Collection"
                 subject="Field Performance Metrics"
                 alt="MindGame Africa Research — Applied data collection and performance observation during training."
                 aspectRatio="4/3"
                 variant="navy"
-                caption="DATA INTEGRITY // §17.1"
               />
             </motion.div>
           </div>
@@ -334,7 +331,7 @@ export default function ResearchPage() {
                 }`}
               >
                 <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider uppercase">
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
                     TYPE {String(idx + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg font-bold tracking-tight mt-2.5">
@@ -342,7 +339,7 @@ export default function ResearchPage() {
                   </h3>
                 </div>
                 <div className="pt-4 mt-4 border-t border-white/10">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/45 uppercase tracking-wide">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/45 uppercase tracking-wide">
                     Collaborative Route
                   </span>
                 </div>
@@ -396,10 +393,10 @@ export default function ResearchPage() {
             {/* Structured Intentional Status Block */}
             <div className="mt-8 rounded-2xl border border-navy/15 bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(16,35,63,0.05)] text-left">
               <div className="flex items-center justify-between pb-5 mb-5 border-b border-navy/[0.08]">
-                <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                   Archival Portfolio Progression
                 </span>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
                   Developing Portfolio
                 </span>
               </div>
@@ -407,12 +404,12 @@ export default function ResearchPage() {
                 {outputsStatus.copy}
               </p>
               <div className="mt-8 pt-6 border-t border-navy/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <span className="text-xs text-navy/55 font-[family-name:var(--font-jetbrains-mono)]">
+                <span className="text-xs text-navy/55 font-[family-name:var(--font-inter)]">
                   Reports, publications & projects will be archived here as completed
                 </span>
                 <Link
                   href="/partner-with-us?type=Research+and+Evaluation"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] text-navy hover:text-gold transition-colors"
                 >
                   <span>Propose a Study</span>
                   <ArrowUpRight size={14} />

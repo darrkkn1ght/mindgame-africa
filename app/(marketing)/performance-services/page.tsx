@@ -70,12 +70,12 @@ export default function PerformanceServicesPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/observation-and-analysis/services-diagnostic-review-4x3.jpg"
                 name="Observation & Analysis"
                 subject="Performance Review & Observation"
                 alt="MindGame Africa — Systematic performance observation, diagnostic review, and video analysis in natural African sporting settings."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="ANALYTICAL OBSERVATION // §17.1"
               />
             </motion.div>
           </div>
@@ -93,7 +93,7 @@ export default function PerformanceServicesPage() {
               className="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 rounded-xl bg-navy p-7 md:p-8 max-w-[920px] transition-all duration-300 hover:-translate-y-1 shadow-[0_4px_20px_rgba(16,35,63,0.14)] hover:shadow-[0_20px_38px_-10px_rgba(16,35,63,0.38)] border border-navy"
             >
               <div>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-gold/15 text-gold border border-gold/30">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-gold/15 text-gold border border-gold/20">
                   Primary Practice Offering
                 </span>
                 <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-xl sm:text-2xl font-bold tracking-tight mt-2.5">
@@ -103,7 +103,7 @@ export default function PerformanceServicesPage() {
                   Explore how we work with athletes, coaches, teams and high-pressure performers across performance psychology, mental performance, and behavioural performance.
                 </p>
               </div>
-              <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider font-[family-name:var(--font-jetbrains-mono)] uppercase text-gold shrink-0">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider font-[family-name:var(--font-inter)] uppercase text-gold shrink-0">
                 <span>Explore Practice Area</span>
                 <ArrowUpRight
                   size={18}
@@ -132,10 +132,10 @@ export default function PerformanceServicesPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider">
                       AREA {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-navy/45 uppercase tracking-wider">
+                    <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/45 uppercase tracking-wider">
                       CONSULTATIVE
                     </span>
                   </div>
@@ -147,12 +147,12 @@ export default function PerformanceServicesPage() {
                   </p>
                 </div>
                 <div className="pt-6 mt-6 border-t border-navy/[0.06] flex items-center justify-between">
-                  <span className="text-xs text-navy/50 font-[family-name:var(--font-jetbrains-mono)]">
+                  <span className="text-xs text-navy/50 font-[family-name:var(--font-inter)]">
                     Evidence-informed scope
                   </span>
                   <Link
                     href={service.href}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy hover:text-gold transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] text-navy hover:text-gold transition-colors"
                   >
                     <span>Inquire</span>
                     <ArrowUpRight size={14} />
@@ -184,7 +184,7 @@ export default function PerformanceServicesPage() {
                 {process.heading}
               </h2>
             </motion.div>
-            <p className="text-cream/65 text-sm font-[family-name:var(--font-jetbrains-mono)] max-w-[340px]">
+            <p className="text-cream/65 text-sm font-[family-name:var(--font-inter)] max-w-[340px]">
               A disciplined progression from diagnostic clarity to measured review.
             </p>
           </div>
@@ -206,11 +206,11 @@ export default function PerformanceServicesPage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-2xl font-bold text-gold">
+                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-gold">
                       {item.step}
                     </span>
                     {idx < 5 && (
-                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-inter)]">
                         &rarr;
                       </span>
                     )}
@@ -235,12 +235,12 @@ export default function PerformanceServicesPage() {
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <SectionImage
+                src="/images/team-sessions/services-team-workshop-16x9.jpg"
                 name="Team Performance Sessions"
                 subject="Team Workshops & Planning"
                 alt="MindGame Africa — Structured team conversations, psychological workshops, and review sessions in elite African sport."
                 aspectRatio="16/9"
                 variant="navy"
-                caption="TEAM ENVIRONMENT // §17.1"
               />
             </motion.div>
             <motion.div
@@ -250,12 +250,12 @@ export default function PerformanceServicesPage() {
               transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <SectionImage
+                src="/images/coaching-environments/services-coach-feedback-16x9.jpg"
                 name="Coach Development & Feedback"
                 subject="Coaching Environment Review"
                 alt="MindGame Africa — Coach observation, feedback discussions, and decision-making review in demanding sporting environments."
                 aspectRatio="16/9"
                 variant="navy"
-                caption="COACHING REALITIES // §17.1"
               />
             </motion.div>
           </div>

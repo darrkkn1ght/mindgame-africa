@@ -48,10 +48,10 @@ export function ResearchPreview() {
             className="lg:col-span-5"
           >
             <SectionImage
-              name="RESEARCHERS AT WORK // FIELD CONTEXT"
+              name="RESEARCHERS AT WORK — FIELD CONTEXT"
               alt="Wide environmental landscape photograph of an African university sports campus running track at dusk with natural mountain horizon"
               aspectRatio="16/9"
-              subject="RESEARCH INQUIRY // §17.1"
+              subject="RESEARCH INQUIRY"
               variant="cream"
               src="/images/researchers-at-work/home-research-context-16x9.jpg"
             />

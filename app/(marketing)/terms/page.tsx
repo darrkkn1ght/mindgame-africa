@@ -39,18 +39,18 @@ export default function TermsPage() {
           <h1 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
             Terms of Use
           </h1>
-          <p className="mt-4 text-navy/60 font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-wider">
-            Effective Date: 16 September 2026 · Pending Jurisdiction-Specific Legal Review (§24)
+          <p className="mt-4 text-navy/60 font-[family-name:var(--font-inter)] text-xs uppercase tracking-wider">
+            Effective Date: 16 September 2026
           </p>
         </header>
 
         {/* Regulatory Flag Banner */}
         <div className="rounded-xl border border-navy/15 bg-white p-6 md:p-8 mb-12 shadow-sm">
-          <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green block mb-2">
+          <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green block mb-2">
             Legal Notice & Advisory
           </span>
           <p className="text-navy/80 text-sm md:text-[0.9375rem] leading-relaxed">
-            These Terms of Use govern access to and use of the MindGame Africa public digital platform. In accordance with §24 of the Original Brief, this document represents an institutional operational draft and must undergo jurisdiction-specific legal review prior to commercial launch.
+            These Terms of Use govern access to and use of the MindGame Africa public digital platform. This document outlines terms of participation, intellectual property protections, and acceptable engagement standards.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function TermsPage() {
               4. Developing Capabilities & Forward-Looking Frameworks
             </h2>
             <p>
-              In accordance with our core commitment to institutional clarity, certain sections of this website detail developing research themes (§8.3), future capability areas (§7.4), and prospective educational programmes (§9.4). These descriptions outline areas of academic inquiry and institutional roadmaps; they do not constitute binding commercial offers, accredited university degree programmes, or guaranteed future employment.
+              In accordance with our core commitment to institutional clarity, certain sections of this website detail developing research themes, future capability areas, and prospective educational programmes. These descriptions outline areas of academic inquiry and institutional roadmaps; they do not constitute binding commercial offers, accredited university degree programmes, or guaranteed future employment.
             </p>
           </section>
 
@@ -108,7 +108,7 @@ export default function TermsPage() {
               5. Acceptable Use of Inquiry Channels
             </h2>
             <p>
-              When utilizing our inquiry or partnership forms, you agree to provide authentic, accurate, and non-confidential operational information. Automated spam submissions, scraping bots, malicious payloads, and fraudulent representations of institutional identity are strictly prohibited.
+              When utilising our inquiry or partnership forms, you agree to provide authentic, accurate, and non-confidential operational information. Automated spam submissions, scraping bots, malicious payloads, and fraudulent representations of institutional identity are strictly prohibited.
             </p>
           </section>
 
@@ -122,9 +122,6 @@ export default function TermsPage() {
               </p>
               <p className="text-navy/70">
                 These terms shall be governed by and construed in accordance with applicable regional and international civil contract principles.
-              </p>
-              <p className="text-xs text-navy/50 italic pt-2 border-t border-navy/10">
-                [JURISDICTION GAP: Precise statutory jurisdiction, arbitration seats, and dispute resolution courts to be inserted upon formal corporate structuring and legal review per §24 of the Original Brief. Per Amendment A1, no physical location is published.]
               </p>
             </div>
           </section>

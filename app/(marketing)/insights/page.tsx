@@ -66,7 +66,7 @@ export default function InsightsPage() {
               <p className="mt-5 text-navy/75 text-base md:text-lg leading-relaxed">
                 {contentArchitecture.subheading}
               </p>
-              <p className="mt-4 text-navy/65 text-sm font-[family-name:var(--font-jetbrains-mono)]">
+              <p className="mt-4 text-navy/65 text-sm font-[family-name:var(--font-inter)]">
                 Structured knowledge outputs designed for practitioners, coaches, and leaders rather than brief blog commentary.
               </p>
             </motion.div>
@@ -85,7 +85,6 @@ export default function InsightsPage() {
                 alt="Minimalist abstract vector composition representing analytical literature review and evidence classification on warm cream"
                 aspectRatio="4/3"
                 variant="cream"
-                caption="EVIDENCE TRANSLATION // §17.1"
                 src="/images/performance-data/insights-translation-grid-4x3.jpg"
               />
             </motion.div>
@@ -108,7 +107,7 @@ export default function InsightsPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-green uppercase tracking-wider">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-green uppercase tracking-wider">
                       FORMAT {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span className="w-2 h-2 rounded-full bg-gold shrink-0" />
@@ -121,7 +120,7 @@ export default function InsightsPage() {
                   </p>
                 </div>
                 <div className="pt-4 mt-5 border-t border-navy/[0.06]">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-navy/40 uppercase tracking-wide">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/40 uppercase tracking-wide">
                     Knowledge Output Specification
                   </span>
                 </div>
@@ -132,7 +131,7 @@ export default function InsightsPage() {
           {/* Optional: Render categories ONLY if articles exist per §11.5 code assertion */}
           {publicCategories.length > 0 && (
             <div className="mt-12 pt-8 border-t border-navy/[0.08]">
-              <h4 className="text-xs uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy/50 mb-4">
+              <h4 className="text-xs uppercase font-[family-name:var(--font-inter)] text-navy/50 mb-4">
                 Published Categories
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -173,10 +172,10 @@ export default function InsightsPage() {
               {/* Exact §11.3 Status String in Dedicated Institutional Box */}
               <div className="mt-8 rounded-2xl border border-white/15 bg-navy-soft p-8 md:p-9 shadow-[0_4px_24px_rgba(16,35,63,0.2)]">
                 <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-gold">
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-gold">
                     Repository Development Notice (§11.3)
                   </span>
-                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-white/10 text-cream/70">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-white/10 text-cream/70">
                     Pre-publication
                   </span>
                 </div>
@@ -195,12 +194,12 @@ export default function InsightsPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/researchers-at-work/insights-literature-review-4x3.jpg"
                 name="Field Analysis"
                 subject="Observational Field Notes"
                 alt="MindGame Africa Insights — Field notes, match analysis, and practitioner perspectives."
                 aspectRatio="4/3"
                 variant="navy"
-                caption="FIELD PERSPECTIVES // §17.1"
               />
             </motion.div>
           </div>
@@ -238,12 +237,12 @@ export default function InsightsPage() {
               className="lg:col-span-6"
             >
               <SectionImage
+                src="/images/practitioner-interaction/insights-practitioner-discussion-4x3.jpg"
                 name="Performance Frameworks"
                 subject="Knowledge Translation Tools"
                 alt="MindGame Africa Insights — Performance frameworks and evidence-based summaries for practitioners."
-                aspectRatio="16/9"
+                aspectRatio="4/3"
                 variant="navy"
-                caption="PRACTITIONER RESOURCES // §17.1"
               />
             </motion.div>
           </div>

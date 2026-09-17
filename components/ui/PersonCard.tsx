@@ -37,11 +37,11 @@ export function PersonCard({
       <div>
         {/* Header: Role & Expertise */}
         <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-          <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+          <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
             {person.role}
           </span>
           {person.areaOfExpertise && (
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-medium text-gold">
+            <span className="font-[family-name:var(--font-inter)] text-xs font-medium text-gold">
               {person.areaOfExpertise}
             </span>
           )}
@@ -69,7 +69,7 @@ export function PersonCard({
         {person.qualifications && person.qualifications.length > 0 && (
           <div className="mt-6 pt-5 border-t border-current/10">
             <span
-              className={`text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] block mb-2.5 ${
+              className={`text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] block mb-2.5 ${
                 isNavy ? "text-cream/50" : "text-navy/50"
               }`}
             >
@@ -98,7 +98,7 @@ export function PersonCard({
         {person.selectedWork && person.selectedWork.length > 0 && (
           <div className="mt-5 pt-4 border-t border-current/10">
             <span
-              className={`text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] block mb-2.5 ${
+              className={`text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] block mb-2.5 ${
                 isNavy ? "text-cream/50" : "text-navy/50"
               }`}
             >
@@ -133,7 +133,7 @@ export function PersonCard({
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] transition-colors ${
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] transition-colors ${
                 isNavy
                   ? "text-gold hover:text-white"
                   : "text-navy hover:text-gold"

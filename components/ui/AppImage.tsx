@@ -108,7 +108,7 @@ export function AppImage({
             />
 
             {/* Top Bar: Subject & Ratio */}
-            <div className="relative z-10 flex items-center justify-between text-[0.6875rem] font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] opacity-75">
+            <div className="relative z-10 flex items-center justify-between text-[0.6875rem] font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] opacity-75">
               <span className="flex items-center gap-1.5">
                 <Camera size={13} className={isNavy ? "text-gold" : "text-green"} />
                 <span>{name || "DOCUMENTARY PHOTOGRAPHY"}</span>
@@ -122,7 +122,7 @@ export function AppImage({
             <div className="relative z-10 my-auto py-4 text-center max-w-[480px] mx-auto">
               {subject && (
                 <p
-                  className={`text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] mb-2 ${
+                  className={`text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] mb-2 ${
                     isNavy ? "text-gold" : "text-green"
                   }`}
                 >
@@ -139,8 +139,8 @@ export function AppImage({
             </div>
 
             {/* Bottom Bar: Metadata */}
-            <div className="relative z-10 flex items-center justify-between pt-3 border-t border-current/10 text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] opacity-60">
-              <span>DOCUMENTARY ARCHIVE // §17</span>
+            <div className="relative z-10 flex items-center justify-between pt-3 border-t border-current/10 text-[0.6875rem] font-[family-name:var(--font-inter)] opacity-60">
+              <span>DOCUMENTARY ARCHIVE</span>
               <span>FIELD OBSERVATION</span>
             </div>
           </div>
@@ -148,7 +148,7 @@ export function AppImage({
       </div>
 
       {caption && (
-        <figcaption className="mt-2.5 text-xs text-navy/60 font-[family-name:var(--font-jetbrains-mono)]">
+        <figcaption className="mt-2.5 text-xs text-navy/60 font-[family-name:var(--font-inter)]">
           {caption}
         </figcaption>
       )}

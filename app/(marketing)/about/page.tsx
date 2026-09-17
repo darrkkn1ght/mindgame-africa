@@ -74,7 +74,7 @@ export default function AboutPage() {
                 */}
                 <div className="mt-8 pt-8 border-t border-navy/10">
                   <div className="mb-2">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                       Current Focus & Competence
                     </span>
                   </div>
@@ -107,10 +107,11 @@ export default function AboutPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/multidisciplinary-collaboration/about-core-practice-4x3.jpg"
                 name="MULTIDISCIPLINARY PRACTICE"
                 alt="Performance practitioners examining athlete cognitive and behavioural factors in a professional setting"
                 aspectRatio="4/3"
-                subject="APPLIED INTERVENTION // §17.1"
+                subject="APPLIED INTERVENTION"
                 variant="cream"
               />
             </motion.div>
@@ -131,7 +132,7 @@ export default function AboutPage() {
           <blockquote className="font-[family-name:var(--font-fraunces)] text-cream text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-balance leading-snug max-w-[960px] mx-auto">
             “{definingIdea.quote}”
           </blockquote>
-          <p className="mt-6 font-[family-name:var(--font-jetbrains-mono)] text-xs text-gold uppercase tracking-widest font-medium">
+          <p className="mt-6 font-[family-name:var(--font-inter)] text-xs text-gold uppercase tracking-widest font-medium">
             {definingIdea.heading}
           </p>
         </div>
@@ -150,10 +151,11 @@ export default function AboutPage() {
               className="order-2 lg:order-1 lg:col-span-5"
             >
               <SectionImage
+                src="/images/training-and-competition/about-why-africa-context-4x3.jpg"
                 name="AFRICAN PERFORMANCE REALITIES"
                 alt="Coach and athletes reviewing tactical movement and environmental demands during regional tournament preparation"
                 aspectRatio="4/3"
-                subject="REGIONAL PERFORMANCE CONTEXT // §17.2"
+                subject="REGIONAL PERFORMANCE CONTEXT"
                 variant="cream"
               />
             </motion.div>
@@ -219,7 +221,7 @@ export default function AboutPage() {
               >
                 <Card variant="navy" className="h-full flex flex-col justify-between">
                   <div className="flex gap-4 items-start">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-sm font-semibold text-gold shrink-0 mt-0.5">
+                    <span className="font-[family-name:var(--font-inter)] text-sm font-semibold text-gold shrink-0 mt-0.5">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <p className="text-cream/85 text-[0.9375rem] md:text-base leading-[1.65]">
@@ -267,10 +269,11 @@ export default function AboutPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/multidisciplinary-collaboration/about-long-term-capability-4x3.jpg"
                 name="LONG-TERM CAPABILITY DEVELOPMENT"
                 alt="Researchers, specialists and educators in collaborative consultation regarding institutional capability development"
                 aspectRatio="4/3"
-                subject="PROGRESSIVE INFRASTRUCTURE // §17.1"
+                subject="PROGRESSIVE INFRASTRUCTURE"
                 variant="navy"
               />
             </motion.div>
@@ -309,7 +312,7 @@ export default function AboutPage() {
             className="rounded-2xl bg-white p-8 md:p-12 text-navy border border-navy/[0.08] shadow-[0_4px_20px_rgba(16,35,63,0.04)] max-w-[860px]"
           >
             <div className="mb-3">
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+              <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                 {leadershipTeaser.founder.designation}
               </span>
             </div>

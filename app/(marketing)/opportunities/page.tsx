@@ -69,12 +69,12 @@ export default function OpportunitiesPage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/practitioner-interaction/opportunities-mentoring-4x3.jpg"
                 name="Practitioner Supervision"
                 subject="Applied Practitioner Mentoring"
                 alt="MindGame Africa Opportunities — Practitioner mentoring and supervised experience in African performance environments."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="PRACTITIONER PATHWAYS // §17.1"
               />
             </motion.div>
           </div>
@@ -103,7 +103,7 @@ export default function OpportunitiesPage() {
                   className="p-4 rounded-xl bg-white border border-navy/[0.08] flex items-center justify-between"
                 >
                   <span className="text-sm font-medium text-navy/85">{item}</span>
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider text-navy/40">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider text-navy/40">
                     Planned
                   </span>
                 </div>
@@ -120,10 +120,10 @@ export default function OpportunitiesPage() {
             className="rounded-2xl border border-navy/15 bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(16,35,63,0.05)] max-w-[840px]"
           >
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-navy/[0.08]">
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+              <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                 Opportunity Registry Status
               </span>
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
                 No Open Calls
               </span>
             </div>
@@ -162,12 +162,12 @@ export default function OpportunitiesPage() {
 
               {/* Image Slot 2 (§17: Applied Academic & Field Engagement) */}
               <SectionImage
+                src="/images/observation-and-analysis/opportunities-field-observation-16x9.jpg"
                 name="Applied Training"
                 subject="Field Engagement & Observation"
                 alt="MindGame Africa Opportunities — Early career practitioners observing performance analysis in elite competition."
                 aspectRatio="16/9"
                 variant="navy"
-                caption="SUPERVISED PRACTICE // §17.1"
               />
             </motion.div>
 

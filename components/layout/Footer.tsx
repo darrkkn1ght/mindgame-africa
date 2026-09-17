@@ -42,7 +42,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="text-[0.8125rem] font-semibold uppercase tracking-[0.08em] text-cream/40 mb-5 font-[family-name:var(--font-jetbrains-mono)]">
+              <h4 className="text-[0.8125rem] font-semibold uppercase tracking-[0.08em] text-cream/40 mb-5 font-[family-name:var(--font-inter)]">
                 {heading}
               </h4>
               <ul className="flex flex-col gap-3">

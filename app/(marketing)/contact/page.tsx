@@ -54,26 +54,26 @@ export default function ContactPage() {
         <section className="relative bg-cream border-t border-navy/[0.06] py-16">
           <div className="mx-auto max-w-[80rem] px-5 md:px-12">
             <div className="max-w-[760px]">
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold uppercase tracking-wider text-green">
+              <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
                 Direct Channels
               </span>
               <div className="mt-4 flex flex-wrap gap-8">
                 {showEmail && (
                   <div>
-                    <span className="text-xs text-navy/50 font-[family-name:var(--font-jetbrains-mono)] uppercase">
+                    <span className="text-xs text-navy/50 font-[family-name:var(--font-inter)] uppercase">
                       Email
                     </span>
-                    <p className="text-navy font-bold font-[family-name:var(--font-jetbrains-mono)] text-lg">
+                    <p className="text-navy font-bold font-[family-name:var(--font-inter)] text-lg">
                       {CONTACT_EMAIL}
                     </p>
                   </div>
                 )}
                 {showPhone && (
                   <div>
-                    <span className="text-xs text-navy/50 font-[family-name:var(--font-jetbrains-mono)] uppercase">
+                    <span className="text-xs text-navy/50 font-[family-name:var(--font-inter)] uppercase">
                       Phone
                     </span>
-                    <p className="text-navy font-bold font-[family-name:var(--font-jetbrains-mono)] text-lg">
+                    <p className="text-navy font-bold font-[family-name:var(--font-inter)] text-lg">
                       {CONTACT_PHONE}
                     </p>
                   </div>

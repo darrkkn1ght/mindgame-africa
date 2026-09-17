@@ -94,7 +94,7 @@ export function CurrentFocus() {
               name="FIELD OBSERVATION & PRACTICE"
               alt="Abstract minimalist performance data visualization showing biometric trends and cognitive response latency on deep navy"
               aspectRatio="4/3"
-              subject="DOCUMENTARY OBSERVATION // §17.1"
+              subject="DOCUMENTARY OBSERVATION"
               variant="navy"
               src="/images/performance-data/home-focus-metrics-4x3.jpg"
             />

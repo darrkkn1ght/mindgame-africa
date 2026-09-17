@@ -76,12 +76,12 @@ export default function AppliedPerformancePracticePage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/training-and-competition/practice-competitive-prep-4x3.jpg"
                 name="Performance Environment"
                 subject="Training & Competition Realities"
                 alt="MindGame Africa — Athletes and performers preparing under demanding competitive conditions in African sport."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="APPLIED PERFORMANCE PRACTICE // §17.1"
               />
             </motion.div>
           </div>
@@ -108,7 +108,7 @@ export default function AppliedPerformancePracticePage() {
                 {howWeWork.heading}
               </h2>
             </motion.div>
-            <p className="text-cream/65 text-sm font-[family-name:var(--font-jetbrains-mono)] max-w-[340px]">
+            <p className="text-cream/65 text-sm font-[family-name:var(--font-inter)] max-w-[340px]">
               A disciplined, six-step intervention process grounded in specialist competence.
             </p>
           </div>
@@ -129,11 +129,11 @@ export default function AppliedPerformancePracticePage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-2xl font-bold text-gold">
+                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-gold">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     {idx < 5 && (
-                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-inter)]">
                         &rarr;
                       </span>
                     )}
@@ -181,12 +181,12 @@ export default function AppliedPerformancePracticePage() {
               className="lg:col-span-6"
             >
               <SectionImage
+                src="/images/practitioner-interaction/practice-collaboration-16x9.jpg"
                 name="Coach & Performer Collaboration"
                 subject="Working Interaction & Feedback"
                 alt="MindGame Africa — Practitioner, coach, and athlete working together around performance development and strategic focus."
                 aspectRatio="16/9"
                 variant="cream"
-                caption="PRACTITIONER COLLABORATION // §17.1"
               />
             </motion.div>
           </div>
@@ -209,7 +209,7 @@ export default function AppliedPerformancePracticePage() {
                 }`}
               >
                 <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider uppercase">
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
                     AUDIENCE {String(idx + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-xl sm:text-2xl font-bold tracking-tight mt-3">
@@ -217,7 +217,7 @@ export default function AppliedPerformancePracticePage() {
                   </h3>
                 </div>
                 <div className="pt-5 mt-5 border-t border-navy/[0.06]">
-                  <span className="text-xs text-navy/50 font-[family-name:var(--font-jetbrains-mono)]">
+                  <span className="text-xs text-navy/50 font-[family-name:var(--font-inter)]">
                     Direct applied consultation
                   </span>
                 </div>
@@ -260,12 +260,12 @@ export default function AppliedPerformancePracticePage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/observation-and-analysis/practice-analytical-review-16x9.jpg"
                 name="Performance Analysis"
                 subject="Field Observation & Data Recording"
                 alt="MindGame Africa — Performance psychologist reviewing video footage and behavioural notes following competition."
                 aspectRatio="16/9"
                 variant="navy"
-                caption="ANALYTICAL RIGOUR // §17.1"
               />
             </motion.div>
           </div>
@@ -286,7 +286,7 @@ export default function AppliedPerformancePracticePage() {
                 className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-7 border border-white/10 hover:border-gold/40 transition-all duration-300"
               >
                 <div>
-                  <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold tracking-wider uppercase">
+                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
                     QUESTION {String(idx + 1).padStart(2, "0")}
                   </span>
                   <p className="font-[family-name:var(--font-fraunces)] text-cream text-lg sm:text-xl font-medium leading-snug mt-3 italic">
@@ -294,7 +294,7 @@ export default function AppliedPerformancePracticePage() {
                   </p>
                 </div>
                 <div className="pt-4 mt-6 border-t border-white/10">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-cream/40 uppercase tracking-wider">
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/40 uppercase tracking-wider">
                     APPLIED INQUIRY FOCUS
                   </span>
                 </div>

@@ -155,7 +155,7 @@ export function OpportunityInterestForm() {
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
+                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
               >
                 Register another interest
               </button>
@@ -182,7 +182,7 @@ export function OpportunityInterestForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {labels.fullName}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -210,7 +210,7 @@ export function OpportunityInterestForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {labels.email}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -238,7 +238,7 @@ export function OpportunityInterestForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {labels.currentBackground}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-navy/40 font-normal">
               (optional)
             </span>
           </label>
@@ -259,7 +259,7 @@ export function OpportunityInterestForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {labels.areaOfInterest}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-navy/40 font-normal">
               (optional)
             </span>
           </label>
@@ -285,7 +285,7 @@ export function OpportunityInterestForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             Message or specific focus{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-navy/40 font-normal">
               (optional)
             </span>
           </label>
@@ -310,7 +310,7 @@ export function OpportunityInterestForm() {
             />
             <span className="text-sm text-navy/80 leading-snug">
               {labels.consent}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </span>

@@ -147,7 +147,7 @@ export function ContactForm() {
               <button
                 type="button"
                 onClick={handleReset}
-                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
+                className="inline-flex items-center text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] text-navy underline underline-offset-4 hover:text-gold transition-colors"
               >
                 Send another message
               </button>
@@ -168,7 +168,7 @@ export function ContactForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {contactContent.form.labels.fullName}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -214,7 +214,7 @@ export function ContactForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               {contactContent.form.labels.email}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </label>
@@ -244,7 +244,7 @@ export function ContactForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               Inquiry type{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-navy/40 font-normal">
                 (optional)
               </span>
             </label>
@@ -269,7 +269,7 @@ export function ContactForm() {
               className="block text-sm font-semibold text-navy mb-2"
             >
               Preferred contact method{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-navy/40 font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-navy/40 font-normal">
                 (optional)
               </span>
             </label>
@@ -298,7 +298,7 @@ export function ContactForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {contactContent.form.labels.subject}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -326,7 +326,7 @@ export function ContactForm() {
             className="block text-sm font-semibold text-navy mb-2"
           >
             {contactContent.form.labels.message}{" "}
-            <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+            <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
               *
             </span>
           </label>
@@ -358,7 +358,7 @@ export function ContactForm() {
             />
             <span className="text-sm text-navy/80 leading-snug">
               {contactContent.form.labels.consent}{" "}
-              <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs text-orange font-normal">
+              <span className="font-[family-name:var(--font-inter)] text-xs text-orange font-normal">
                 *
               </span>
             </span>

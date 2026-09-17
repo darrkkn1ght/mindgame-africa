@@ -22,10 +22,11 @@ export function EducationPreview() {
             className="order-2 lg:order-1 lg:col-span-5"
           >
             <SectionImage
+              src="/images/teaching-and-learning/home-education-seminar-4x3.jpg"
               name="PROFESSIONAL LEARNING & TEACHING"
               alt="Practitioners and coaches engaged in structured case discussion, reflection, and applied learning"
               aspectRatio="4/3"
-              subject="LEARNING IN PRACTICE // §17.1"
+              subject="LEARNING IN PRACTICE"
               variant="navy"
             />
           </motion.div>

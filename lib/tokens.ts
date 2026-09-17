@@ -24,8 +24,8 @@ export const colors = {
 // ─── Typography ───────────────────────────────────────────
 export const fontFamily = {
   display: "var(--font-fraunces)", // Fraunces — serif, for H1/H2, pull-quotes
-  body: "var(--font-inter)", // Inter — grotesk sans, for body/UI
-  mono: "var(--font-jetbrains-mono)", // JetBrains Mono — data labels, eyebrows, tags
+  body: "var(--font-inter)", // Inter — clean sans, for body, UI, labels, and eyebrows
+  mono: "var(--font-inter)", // Inter — clean sans
 } as const;
 
 export const typeScale = {

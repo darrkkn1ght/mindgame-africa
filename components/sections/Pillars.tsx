@@ -73,7 +73,7 @@ export function Pillars() {
                 <div>
                   <div className="flex items-center justify-between gap-4 mb-5">
                     <span
-                      className={`font-[family-name:var(--font-jetbrains-mono)] text-xs md:text-sm font-semibold tracking-wider ${
+                      className={`font-[family-name:var(--font-inter)] text-xs md:text-sm font-semibold tracking-wider ${
                         isGold ? "text-gold" : "text-green"
                       }`}
                     >
@@ -81,7 +81,7 @@ export function Pillars() {
                     </span>
 
                     {pillar.isFeatured && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-medium bg-gold/15 text-gold border border-gold/30">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-[family-name:var(--font-inter)] font-semibold uppercase tracking-wider bg-gold/15 text-gold border border-gold/20">
                         Primary Practice Offering
                       </span>
                     )}
@@ -135,7 +135,7 @@ export function Pillars() {
 
                   <Link
                     href={pillar.href}
-                    className={`inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-jetbrains-mono)] transition-colors duration-200 ml-auto ${
+                    className={`inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] transition-colors duration-200 ml-auto ${
                       isNavy
                         ? "text-gold hover:text-white"
                         : "text-navy/80 hover:text-navy"

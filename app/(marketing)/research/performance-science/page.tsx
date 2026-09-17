@@ -72,7 +72,6 @@ export default function PerformanceSciencePage() {
                 alt="Abstract biomechanical force curves and temporal telemetry lines representing performance science telemetry"
                 aspectRatio="4/3"
                 variant="cream"
-                caption="SCIENTIFIC INQUIRY // §17.1"
                 src="/images/performance-data/perf-science-telemetry-4x3.jpg"
               />
             </motion.div>
@@ -100,7 +99,7 @@ export default function PerformanceSciencePage() {
                 {functionItems.heading}
               </h2>
             </motion.div>
-            <p className="text-cream/65 text-sm font-[family-name:var(--font-jetbrains-mono)] max-w-[340px]">
+            <p className="text-cream/65 text-sm font-[family-name:var(--font-inter)] max-w-[340px]">
               Guiding principles for scientific translation and cross-discipline collaboration.
             </p>
           </div>
@@ -122,11 +121,11 @@ export default function PerformanceSciencePage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-2xl font-bold text-gold">
+                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-gold">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     {idx < 5 && (
-                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-jetbrains-mono)]">
+                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-inter)]">
                         &rarr;
                       </span>
                     )}
@@ -148,12 +147,12 @@ export default function PerformanceSciencePage() {
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <SectionImage
+                src="/images/teaching-and-learning/perf-science-academic-collab-21x9.jpg"
                 name="Academic & Faculty Collaboration"
                 subject="University Teaching & Discussion"
                 alt="MindGame Africa — Academic seminar and faculty collaboration connecting performance science with field practice."
                 aspectRatio="21/9"
                 variant="navy"
-                caption="ACADEMIC COLLABORATION // §17.1"
               />
             </motion.div>
           </div>
@@ -199,12 +198,12 @@ export default function PerformanceSciencePage() {
               className="lg:col-span-5"
             >
               <SectionImage
+                src="/images/observation-and-analysis/perf-science-field-capture-4x3.jpg"
                 name="Field Observation"
                 subject="Observational Movement Recording"
                 alt="MindGame Africa — Field-based performance observation capturing movement quality and technical execution."
                 aspectRatio="4/3"
                 variant="cream"
-                caption="FIELD CAPABILITY DEVELOPMENT // §17.1"
               />
             </motion.div>
           </div>
@@ -226,10 +225,10 @@ export default function PerformanceSciencePage() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-navy/40 uppercase tracking-wider">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-navy/40 uppercase tracking-wider">
                       DIR {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-jetbrains-mono)] uppercase tracking-wider font-semibold bg-navy/5 text-navy/60 border border-navy/10">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/5 text-navy/60 border border-navy/10">
                       Developing Direction
                     </span>
                   </div>
@@ -241,8 +240,8 @@ export default function PerformanceSciencePage() {
                   </p>
                 </div>
                 <div className="pt-4 mt-5 border-t border-navy/[0.06]">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-jetbrains-mono)] text-navy/40 tracking-wide uppercase">
-                    Non-operational // Future Scope
+                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/40 tracking-wide uppercase">
+                    Future Scope · Developing Capability
                   </span>
                 </div>
               </motion.article>

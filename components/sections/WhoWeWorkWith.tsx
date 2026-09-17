@@ -74,7 +74,7 @@ export function WhoWeWorkWith() {
                     <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-cream-dark/70 text-navy group-hover:bg-gold/15 group-hover:text-gold transition-colors duration-200">
                       <Icon size={20} strokeWidth={1.75} />
                     </span>
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-[0.6875rem] font-semibold tracking-wider text-navy/40">
+                    <span className="font-[family-name:var(--font-inter)] text-[0.6875rem] font-semibold tracking-wider text-navy/40">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                   </div>

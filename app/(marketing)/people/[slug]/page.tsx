@@ -38,7 +38,7 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
         <div className="mx-auto max-w-[80rem] px-5 py-4 md:px-12">
           <Link
             href="/people"
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/70 hover:text-navy transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/70 hover:text-navy transition-colors"
           >
             <ArrowLeft size={14} />
             <span>Back to People & Leadership</span>
@@ -53,12 +53,12 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
             {/* Portrait Slot */}
             <div className="lg:col-span-4">
               <SectionImage
+                src="/images/practitioner-interaction/dr-joshua-oparachukwu-4x3.jpg"
                 name="Dr. Joshua A. Oparachukwu"
                 subject="Founder & Intellectual Lead"
                 alt="Dr. Joshua A. Oparachukwu, Founder of MindGame Africa"
                 aspectRatio="4/3"
                 variant="navy"
-                caption="FOUNDER & INTELLECTUAL LEAD // §12.2"
                 className="shadow-xl"
               />
             </div>
@@ -73,7 +73,7 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
               <h1 className="font-[family-name:var(--font-fraunces)] text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12] mb-3">
                 {founder.name}
               </h1>
-              <p className="font-[family-name:var(--font-jetbrains-mono)] text-gold text-sm md:text-base font-semibold tracking-wide mb-6">
+              <p className="font-[family-name:var(--font-inter)] text-gold text-sm md:text-base font-semibold tracking-wide mb-6">
                 {founder.designation}
               </p>
 
@@ -128,7 +128,7 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
                   onClick={() => setIsBioExpanded(!isBioExpanded)}
                   aria-expanded={isBioExpanded}
                   aria-controls="remaining-bio"
-                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy hover:text-gold transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy hover:text-gold transition-colors"
                 >
                   <span>{isBioExpanded ? "Show Less" : "Read Full Profile"}</span>
                   {isBioExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -141,7 +141,7 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
                   <p className="font-[family-name:var(--font-fraunces)] text-navy text-lg md:text-xl leading-relaxed italic">
                     &ldquo;{founder.leadershipStatement}&rdquo;
                   </p>
-                  <footer className="mt-3 font-[family-name:var(--font-jetbrains-mono)] text-xs uppercase tracking-wider text-navy/60">
+                  <footer className="mt-3 font-[family-name:var(--font-inter)] text-xs uppercase tracking-wider text-navy/60">
                     — {founder.name}, Founder
                   </footer>
                 </blockquote>
@@ -149,7 +149,7 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
 
               {/* Verified Credential Facts Only */}
               <div className="mt-8 pt-6 border-t border-navy/[0.08]">
-                <span className="text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-jetbrains-mono)] text-navy/50 block mb-3">
+                <span className="text-xs font-semibold uppercase tracking-wider font-[family-name:var(--font-inter)] text-navy/50 block mb-3">
                   Academic Background
                 </span>
                 <ul className="space-y-2 text-sm md:text-[0.9375rem]">
@@ -184,7 +184,7 @@ export default function PersonDetailPage({ params }: PersonDetailProps) {
                     key={idx}
                     className="flex items-start gap-3.5 p-4 rounded-lg bg-white border border-navy/[0.06] shadow-[0_1px_4px_rgba(16,35,63,0.03)]"
                   >
-                    <span className="font-[family-name:var(--font-jetbrains-mono)] text-xs font-semibold text-gold shrink-0 mt-0.5">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold shrink-0 mt-0.5">
                       {String(idx + 1).padStart(2, "0")}
                     </span>
                     <span className="text-navy/80 text-sm md:text-[0.9375rem] leading-snug">
