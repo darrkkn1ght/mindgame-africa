@@ -19,7 +19,7 @@ export const aboutContent = {
     paragraph2:
       "Our starting point is simple. Performance is not only a question of talent, facilities or physical preparation. It is also shaped by how people think, learn, decide, communicate, adapt, regulate themselves, respond to pressure, interpret information and work within the environments around them.",
     paragraph3:
-      "MindGame Africa therefore sits at the intersection of performance science, research, education and applied professional practice. Our current strength includes performance psychology, mental performance and behavioural performance, while our broader direction is deliberately multidisciplinary.",
+      "MindGame Africa therefore sits at the intersection of performance science, research, education and applied professional practice. Our present applied capability provides the foundation from which a deliberately multidisciplinary performance science institution can progressively develop.",
   },
 
   definingIdea: {

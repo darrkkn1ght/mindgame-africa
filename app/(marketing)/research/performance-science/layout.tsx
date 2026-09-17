@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PerformanceSciencePage from "./page";
+
 import { performanceScienceContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PerformanceScienceLayout() {
-  return <PerformanceSciencePage />;
+export default function PerformanceScienceLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

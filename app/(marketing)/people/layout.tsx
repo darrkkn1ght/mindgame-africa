@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PeoplePage from "./page";
+
 import { peopleContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PeopleLayout() {
-  return <PeoplePage />;
+export default function PeopleLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

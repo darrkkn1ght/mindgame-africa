@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AppliedPerformancePracticePage from "./page";
+
 import { appliedPerformancePracticeContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AppliedPerformancePracticeLayout() {
-  return <AppliedPerformancePracticePage />;
+export default function AppliedPerformancePracticeLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

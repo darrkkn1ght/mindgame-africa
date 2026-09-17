@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PerformanceServicesPage from "./page";
+
 import { performanceServicesContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PerformanceServicesLayout() {
-  return <PerformanceServicesPage />;
+export default function PerformanceServicesLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

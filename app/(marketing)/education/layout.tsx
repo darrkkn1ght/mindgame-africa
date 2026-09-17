@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import EducationPage from "./page";
+
 import { educationContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function EducationLayout() {
-  return <EducationPage />;
+export default function EducationLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

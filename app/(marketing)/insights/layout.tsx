@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InsightsPage from "./page";
+
 import { insightsContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function InsightsLayout() {
-  return <InsightsPage />;
+export default function InsightsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

@@ -13,7 +13,6 @@ export default function AboutPage() {
     hero,
     core,
     definingIdea,
-    currentStrengths,
     whyAfrica,
     approach,
     whatWeAreBuilding,
@@ -91,34 +90,6 @@ export default function AboutPage() {
                 <p>{core.paragraph1}</p>
                 <p>{core.paragraph2}</p>
                 <p>{core.paragraph3}</p>
-
-                {/* ── Amendment A2 Labelled Block (§4.4) ──
-                    Surfaced per client amendment as an explicit labelled block
-                    with balancing multidisciplinary clause immediately following.
-                */}
-                <div className="mt-8 pt-8 border-t border-navy/10">
-                  <div className="mb-2">
-                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
-                      Current Focus & Competence
-                    </span>
-                  </div>
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-xl font-bold text-navy mb-4">
-                    {currentStrengths.heading}
-                  </h3>
-                  <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-                    {currentStrengths.items.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-lg bg-white px-4 py-3 text-sm font-semibold text-navy border border-navy/10 shadow-[0_1px_3px_rgba(16,35,63,0.03)] flex items-center justify-center text-center"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-navy/70 text-sm italic">
-                    {currentStrengths.balancingClause}
-                  </p>
-                </div>
               </div>
             </motion.div>
 

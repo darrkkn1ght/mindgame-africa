@@ -10,7 +10,7 @@ const focusAreas = [
   {
     icon: Activity,
     title: "Applied Performance Practice",
-    description: "Assessment, mistaken-response regulation, and high-pressure interventions.",
+    description: "Assessment, mistake response and performance under pressure.",
   },
   {
     icon: Cpu,

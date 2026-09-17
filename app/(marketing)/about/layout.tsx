@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AboutPage from "./page";
+
 import { aboutContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutLayout() {
-  return <AboutPage />;
+export default function AboutLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

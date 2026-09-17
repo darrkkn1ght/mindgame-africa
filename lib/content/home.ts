@@ -105,7 +105,7 @@ export const homeContent = {
         id: "federations",
         title: "Sport federations, associations and performance organisations",
         description:
-          "Institutions responsible for talent systems, competition frameworks, governance and coach education.",
+          "Institutions responsible for athlete development, performance programmes, coach education and the environments in which sport performance is developed.",
       },
       {
         id: "institutions",

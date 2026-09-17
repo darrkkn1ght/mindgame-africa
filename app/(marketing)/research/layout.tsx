@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ResearchPage from "./page";
+
 import { researchContent } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ResearchLayout() {
-  return <ResearchPage />;
+export default function ResearchLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }
