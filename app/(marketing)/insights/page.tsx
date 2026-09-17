@@ -115,7 +115,7 @@ export default function InsightsPage() {
           </div>
 
           {/* ── Content Architecture (§11.2) — Visible 9 Content Types Card Grid ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
             {contentArchitecture.items.map((item, idx) => (
               <motion.article
                 key={idx}
@@ -127,26 +127,21 @@ export default function InsightsPage() {
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="rounded-xl border border-navy/[0.08] bg-white p-7 shadow-[0_2px_10px_rgba(16,35,63,0.03)] hover:border-navy/[0.18] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all flex flex-col justify-between"
+                className="rounded-2xl border border-navy/[0.08] bg-white p-7 md:p-8 shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_16px_32px_-8px_rgba(16,35,63,0.08)] hover:-translate-y-1 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-green uppercase tracking-wider">
-                      FORMAT {String(idx + 1).padStart(2, "0")}
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green/10 text-green tracking-wide">
+                      Format {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-gold shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-gold/60 shrink-0" />
                   </div>
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-xl font-bold tracking-tight mb-2.5">
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-xl font-bold tracking-tight mb-3">
                     {item.title}
                   </h3>
                   <p className="text-navy/75 text-[0.9375rem] leading-relaxed">
                     {item.description}
                   </p>
-                </div>
-                <div className="pt-4 mt-5 border-t border-navy/[0.06]">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-navy/40 uppercase tracking-wide">
-                    Knowledge Output Specification
-                  </span>
                 </div>
               </motion.article>
             ))}

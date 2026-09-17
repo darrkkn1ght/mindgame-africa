@@ -213,36 +213,29 @@ export default function PerformanceServicesPage() {
             </p>
           </div>
 
-          {/* Numbered visual flow: Horizontal on desktop (6 columns), stacked on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-4 relative">
+          {/* Engagement Steps: Arranged in a spacious 3-column editorial grid (2 rows of 3) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative">
             {process.steps.map((item, idx) => (
               <motion.div
                 key={item.step}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
                   duration: 0.45,
-                  delay: idx * 0.08,
+                  delay: idx * 0.06,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
+                className="relative flex flex-col justify-between rounded-2xl bg-navy-soft p-7 md:p-8 border border-white/10 hover:border-gold/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-gold">
-                      {item.step}
-                    </span>
-                    {idx < 5 && (
-                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-inter)]">
-                        &rarr;
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="font-semibold text-cream text-base mb-2">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gold/15 text-gold tracking-wide mb-4">
+                    Step {item.step}
+                  </span>
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-xl font-bold tracking-tight mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-cream/75 text-[0.875rem] leading-relaxed">
+                  <p className="text-cream/80 text-[0.9375rem] leading-relaxed">
                     {item.description}
                   </p>
                 </div>

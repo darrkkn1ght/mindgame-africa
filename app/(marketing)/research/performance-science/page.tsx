@@ -104,33 +104,26 @@ export default function PerformanceSciencePage() {
             </p>
           </div>
 
-          {/* Numbered visual flow: Horizontal on desktop (6 columns), stacked on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-4">
+          {/* Guiding Principles: Arranged in a spacious 3-column editorial grid (2 rows of 3) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {functionItems.items.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
                   duration: 0.45,
-                  delay: idx * 0.08,
+                  delay: idx * 0.06,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
+                className="relative flex flex-col justify-between rounded-2xl bg-navy-soft p-7 md:p-8 border border-white/10 hover:border-gold/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-gold">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    {idx < 5 && (
-                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-inter)]">
-                        &rarr;
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-cream/85 text-[0.9375rem] leading-relaxed">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gold/15 text-gold tracking-wide mb-4">
+                    Domain {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-cream/85 text-base md:text-[1.0625rem] leading-relaxed font-medium mt-1">
                     {item}
                   </p>
                 </div>
@@ -209,7 +202,7 @@ export default function PerformanceSciencePage() {
           </div>
 
           {/* 8 Areas of Multidisciplinary Direction — Muted Card Grid with Explicit Status Badge */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {futureCapabilityAreas.capabilities.map((cap, idx) => (
               <motion.article
                 key={cap.id}
@@ -218,24 +211,24 @@ export default function PerformanceSciencePage() {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
                   duration: 0.45,
-                  delay: idx * 0.06,
+                  delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="relative flex flex-col justify-between rounded-xl border border-dashed border-navy/25 bg-white/60 p-6 transition-all duration-200 hover:border-navy/40 hover:bg-white"
+                className="relative flex flex-col justify-between rounded-2xl border border-navy/[0.08] bg-white p-6 md:p-7 shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_16px_30px_-8px_rgba(16,35,63,0.08)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-navy/40 uppercase tracking-wider">
-                      Area {String(idx + 1).padStart(2, "0")}
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-green">
+                      {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/5 text-navy/60 border border-navy/10">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/[0.05] text-navy/70 border border-navy/10">
                       Developing Direction
                     </span>
                   </div>
                   <h3 className="font-[family-name:var(--font-fraunces)] text-navy text-lg font-bold tracking-tight leading-snug">
                     {cap.title}
                   </h3>
-                  <p className="mt-2 text-navy/65 text-xs sm:text-[0.8125rem] leading-relaxed">
+                  <p className="mt-2.5 text-navy/70 text-xs sm:text-[0.8125rem] leading-relaxed">
                     {cap.description}
                   </p>
                 </div>

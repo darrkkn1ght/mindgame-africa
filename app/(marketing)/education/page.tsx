@@ -232,8 +232,8 @@ export default function EducationPage() {
             </motion.div>
           </div>
 
-          {/* 8 Learning Experience Features — Refined Clean Feature Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* 8 Learning Experience Features — Balanced 2-Column Editorial Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
             {learningExperience.features.map((item, idx) => (
               <motion.article
                 key={idx}
@@ -242,15 +242,15 @@ export default function EducationPage() {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
                   duration: 0.45,
-                  delay: idx * 0.05,
+                  delay: idx * 0.04,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="rounded-xl bg-white p-6 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300 flex flex-col justify-start"
+                className="rounded-2xl bg-white p-6 md:p-7 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] hover:-translate-y-0.5 transition-all duration-300 flex items-start gap-4"
               >
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-green/10 text-green font-[family-name:var(--font-inter)] text-xs font-bold mb-4">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green/10 text-green font-[family-name:var(--font-inter)] text-xs font-bold shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
-                <p className="text-navy/85 text-[0.9375rem] font-medium leading-relaxed">
+                <p className="text-navy/85 text-[0.9375rem] md:text-base font-medium leading-relaxed">
                   {item}
                 </p>
               </motion.article>
@@ -287,12 +287,12 @@ export default function EducationPage() {
                 {developingProgrammeAreas.subheading}
               </p>
             </motion.div>
-            <span className="inline-flex items-center px-3 py-1 rounded text-xs font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy-soft text-cream/75 border border-white/10 shrink-0">
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy-soft text-cream/75 border border-white/10 shrink-0">
               Not Open for Registration
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
             {developingProgrammeAreas.areas.map((area, idx) => (
               <motion.article
                 key={area.id}
@@ -304,21 +304,21 @@ export default function EducationPage() {
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="flex flex-col justify-between rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
+                className="flex flex-col justify-between rounded-2xl bg-navy-soft p-6 md:p-7 border border-white/10 hover:border-gold/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold">
-                      AREA {String(idx + 1).padStart(2, "0")}
+                      Focus {String(idx + 1).padStart(2, "0")}
                     </span>
-                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-white/10 text-cream/80 border border-white/10">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[0.625rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-white/10 text-cream/80 border border-white/10">
                       In Development
                     </span>
                   </div>
                   <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg font-bold leading-snug">
                     {area.title}
                   </h3>
-                  <p className="mt-2 text-cream/70 text-xs sm:text-[0.8125rem] leading-relaxed">
+                  <p className="mt-2.5 text-cream/70 text-xs sm:text-[0.8125rem] leading-relaxed">
                     {area.description}
                   </p>
                 </div>

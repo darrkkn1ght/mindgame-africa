@@ -137,32 +137,26 @@ export default function AppliedPerformancePracticePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-4">
+          {/* Process Steps: Arranged in a spacious 3-column editorial grid (2 rows of 3) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {howWeWork.steps.map((step, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
                   duration: 0.45,
-                  delay: idx * 0.08,
+                  delay: idx * 0.06,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="relative flex flex-col justify-between rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300"
+                className="relative flex flex-col justify-between rounded-2xl bg-navy-soft p-7 md:p-8 border border-white/10 hover:border-gold/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-gold">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    {idx < 5 && (
-                      <span className="hidden lg:block text-cream/30 text-xs font-[family-name:var(--font-inter)]">
-                        &rarr;
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-cream/85 text-[0.9375rem] leading-relaxed">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gold/15 text-gold tracking-wide mb-4">
+                    Step {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-cream/85 text-base md:text-[1.0625rem] leading-relaxed font-medium mt-1">
                     {step}
                   </p>
                 </div>

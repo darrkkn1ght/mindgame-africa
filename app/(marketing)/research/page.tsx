@@ -243,33 +243,26 @@ export default function ResearchPage() {
             </motion.div>
           </div>
 
-          {/* 6 Approach Items: Numbered visual flow horizontal on desktop (6 columns), stacked on mobile */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-4">
+          {/* 6 Approach Items: Arranged in a spacious 3-column editorial grid (2 rows of 3) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {approach.principles.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{
                   duration: 0.45,
-                  delay: idx * 0.07,
+                  delay: idx * 0.06,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className="relative flex flex-col justify-between rounded-xl bg-white p-6 border border-navy/[0.08] shadow-[0_2px_12px_rgba(16,35,63,0.04)] hover:shadow-[0_12px_24px_-6px_rgba(16,35,63,0.08)] transition-all duration-300"
+                className="relative flex flex-col justify-between rounded-2xl bg-white p-7 md:p-8 border border-navy/[0.08] shadow-[0_2px_14px_rgba(16,35,63,0.04)] hover:shadow-[0_16px_32px_-8px_rgba(16,35,63,0.08)] hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-inter)] text-2xl font-bold text-green">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    {idx < 5 && (
-                      <span className="hidden lg:block text-navy/25 text-xs font-[family-name:var(--font-inter)]">
-                        &rarr;
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-navy/80 text-[0.9375rem] leading-relaxed">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green/10 text-green tracking-wide mb-5">
+                    Principle {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-navy/85 text-base md:text-[1.0625rem] leading-relaxed font-medium">
                     {item}
                   </p>
                 </div>
@@ -325,7 +318,7 @@ export default function ResearchPage() {
           </div>
 
           {/* 7 Collaboration Types rendered as cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {collaborate.types.map((item, idx) => (
               <motion.article
                 key={idx}
@@ -337,22 +330,17 @@ export default function ResearchPage() {
                   delay: idx * 0.05,
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
-                className={`rounded-xl bg-navy-soft p-6 border border-white/10 hover:border-gold/30 transition-all duration-300 flex flex-col justify-between ${
-                  idx === 6 ? "sm:col-span-2 lg:col-span-1" : ""
+                className={`rounded-2xl bg-navy-soft p-7 md:p-8 border border-white/10 hover:border-gold/35 shadow-[0_4px_20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between ${
+                  idx === 6 ? "md:col-span-2 lg:col-span-1" : ""
                 }`}
               >
                 <div>
-                  <span className="font-[family-name:var(--font-inter)] text-xs font-semibold text-gold tracking-wider uppercase">
-                    TYPE {String(idx + 1).padStart(2, "0")}
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gold/15 text-gold tracking-wide mb-4">
+                    Pathway {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg font-bold tracking-tight mt-2.5">
+                  <h3 className="font-[family-name:var(--font-fraunces)] text-cream text-lg md:text-xl font-bold tracking-tight leading-snug">
                     {item}
                   </h3>
-                </div>
-                <div className="pt-4 mt-4 border-t border-white/10">
-                  <span className="text-[0.6875rem] font-[family-name:var(--font-inter)] text-cream/45 uppercase tracking-wide">
-                    Collaborative Route
-                  </span>
                 </div>
               </motion.article>
             ))}
