@@ -10,7 +10,7 @@ import { SectionImage } from "@/components/ui/SectionImage";
 import { researchContent } from "@/lib/content";
 
 export default function ResearchPage() {
-  const { hero, mandate, themes, approach, collaborate, outputsStatus } =
+  const { hero, mandate, themes, approach, collaborate } =
     researchContent;
 
   return (
@@ -368,56 +368,6 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* ── SECTION 4: Research Outputs (§8.6) ──
-          Uses §8.6 status string exactly. Intentional, professional design — NOT a blank room or broken loader.
-      ── */}
-      <section className="relative bg-cream border-t border-navy/[0.06] py-20 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[80rem] px-5 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[840px] mx-auto text-center"
-          >
-            <SectionEyebrow
-              variant="gold-dark"
-              label={outputsStatus.eyebrow}
-              className="mb-4 mx-auto"
-            />
-            <h2 className="font-[family-name:var(--font-fraunces)] text-navy text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-balance leading-[1.12]">
-              {outputsStatus.heading}
-            </h2>
-
-            {/* Structured Intentional Status Block */}
-            <div className="mt-8 rounded-2xl border border-navy/15 bg-white p-8 md:p-10 shadow-[0_4px_24px_rgba(16,35,63,0.05)] text-left">
-              <div className="flex items-center justify-between pb-5 mb-5 border-b border-navy/[0.08]">
-                <span className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-green">
-                  Archival Portfolio Progression
-                </span>
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded text-[0.6875rem] font-[family-name:var(--font-inter)] uppercase tracking-wider font-semibold bg-navy/[0.06] text-navy/60">
-                  Developing Portfolio
-                </span>
-              </div>
-              <p className="text-navy/85 text-lg md:text-xl font-[family-name:var(--font-fraunces)] leading-relaxed">
-                {outputsStatus.copy}
-              </p>
-              <div className="mt-8 pt-6 border-t border-navy/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <span className="text-xs text-navy/55 font-[family-name:var(--font-inter)]">
-                  Reports, publications & projects will be archived here as completed
-                </span>
-                <Link
-                  href="/partner-with-us?type=Research+and+Evaluation"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase font-[family-name:var(--font-inter)] text-navy hover:text-gold transition-colors"
-                >
-                  <span>Propose a Study</span>
-                  <ArrowUpRight size={14} />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 }

@@ -209,7 +209,7 @@ export default function EducationPage() {
                 {learningExperience.heading}
               </h2>
               <p className="mt-4 text-navy/70 text-base md:text-lg leading-relaxed">
-                Our educational architecture combines conceptual clarity with direct transfer to competitive, coaching, and clinical environments.
+                Our educational architecture combines conceptual clarity with direct application to competitive performance, coaching and professional practice environments.
               </p>
             </motion.div>
 

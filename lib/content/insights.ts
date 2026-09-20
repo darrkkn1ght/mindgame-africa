@@ -9,7 +9,7 @@ export const insightsContent = {
     eyebrow: "KNOWLEDGE PLATFORM",
     heading: "Insights and Performance Knowledge",
     supportingSentence:
-      "This is where MindGame Africa will translate research, professional experience and performance questions into useful knowledge for athletes, coaches, practitioners, researchers and organisations.",
+      "MindGame Africa translates research, professional experience and performance questions into useful knowledge for athletes, coaches, practitioners, researchers and organisations.",
   },
 
   contentArchitecture: {
